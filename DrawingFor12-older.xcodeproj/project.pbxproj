@@ -8,22 +8,56 @@
 
 /* Begin PBXBuildFile section */
 		B81070A625A7E9150085983E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81070A525A7E9150085983E /* AppDelegate.swift */; };
-		B81070A825A7E9150085983E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81070A725A7E9150085983E /* SceneDelegate.swift */; };
-		B81070AA25A7E9150085983E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81070A925A7E9150085983E /* ViewController.swift */; };
-		B81070AD25A7E9150085983E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B81070AB25A7E9150085983E /* Main.storyboard */; };
+		B81070AA25A7E9150085983E /* DrawingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81070A925A7E9150085983E /* DrawingVC.swift */; };
 		B81070AF25A7E9160085983E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B81070AE25A7E9160085983E /* Assets.xcassets */; };
 		B81070B225A7E9160085983E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B81070B025A7E9160085983E /* LaunchScreen.storyboard */; };
+		B81070BB25A7E9560085983E /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81070BA25A7E9560085983E /* CanvasView.swift */; };
+		B81070C325A7EF5A0085983E /* PreviewImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81070C225A7EF5A0085983E /* PreviewImgVC.swift */; };
+		B872AC18261F3E7F0096ACD3 /* HapticsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC17261F3E7F0096ACD3 /* HapticsUtil.swift */; };
+		B872AC1D261F44300096ACD3 /* CustomSliderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC1C261F44300096ACD3 /* CustomSliderManager.swift */; };
+		B872AC2A26203C150096ACD3 /* CustomLabelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC2926203C150096ACD3 /* CustomLabelManager.swift */; };
+		B872AC2E26203C930096ACD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B872AC2D26203C930096ACD3 /* Main.storyboard */; };
+		B872AC4A262140E80096ACD3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC49262140E80096ACD3 /* UIColorExtension.swift */; };
+		B872AC4D262141130096ACD3 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC4C262141130096ACD3 /* UITextFieldExtension.swift */; };
+		B872AC50262141440096ACD3 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC4F262141440096ACD3 /* ArrayExtension.swift */; };
+		B87A7099262541FF00FB1707 /* DrawingExtensionGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A7098262541FF00FB1707 /* DrawingExtensionGesture.swift */; };
+		B87ED3F025B912E700CF3EA9 /* 鍵盤不遮擋文字框.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87ED3EF25B912E700CF3EA9 /* 鍵盤不遮擋文字框.swift */; };
+		B87ED3FD25B966EA00CF3EA9 /* PrintInfoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87ED3FC25B966EA00CF3EA9 /* PrintInfoUtil.swift */; };
+		B87ED40025B9800000CF3EA9 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87ED3FF25B9800000CF3EA9 /* UIViewExtension.swift */; };
+		B87ED40325BE57B700CF3EA9 /* GesturesAnimationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87ED40225BE57B700CF3EA9 /* GesturesAnimationUtil.swift */; };
+		B883D72025B81C4500751A63 /* AlertViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883D71F25B81C4500751A63 /* AlertViewUtil.swift */; };
+		B8867AC42621489300B14462 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8867AC32621489300B14462 /* UIImageExtension.swift */; };
+		B8867ACB2621547400B14462 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8867ACA2621547400B14462 /* ImageUtil.swift */; };
+		B8867AE026247A5500B14462 /* EditTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8867ADE26247A5500B14462 /* EditTextVC.swift */; };
+		B8867AE526247B2200B14462 /* EditTextVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8867AE426247B2200B14462 /* EditTextVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B81070A225A7E9150085983E /* DrawingFor12-older.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DrawingFor12-older.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81070A525A7E9150085983E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B81070A725A7E9150085983E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B81070A925A7E9150085983E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B81070AC25A7E9150085983E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B81070A925A7E9150085983E /* DrawingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingVC.swift; sourceTree = "<group>"; };
 		B81070AE25A7E9160085983E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B81070B125A7E9160085983E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B81070B325A7E9160085983E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B81070BA25A7E9560085983E /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		B81070C225A7EF5A0085983E /* PreviewImgVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImgVC.swift; sourceTree = "<group>"; };
+		B872AC17261F3E7F0096ACD3 /* HapticsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsUtil.swift; sourceTree = "<group>"; };
+		B872AC1C261F44300096ACD3 /* CustomSliderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSliderManager.swift; sourceTree = "<group>"; };
+		B872AC2926203C150096ACD3 /* CustomLabelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabelManager.swift; sourceTree = "<group>"; };
+		B872AC2D26203C930096ACD3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B872AC49262140E80096ACD3 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B872AC4C262141130096ACD3 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		B872AC4F262141440096ACD3 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		B87A7098262541FF00FB1707 /* DrawingExtensionGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingExtensionGesture.swift; sourceTree = "<group>"; };
+		B87ED3EF25B912E700CF3EA9 /* 鍵盤不遮擋文字框.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "鍵盤不遮擋文字框.swift"; sourceTree = "<group>"; };
+		B87ED3FC25B966EA00CF3EA9 /* PrintInfoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintInfoUtil.swift; sourceTree = "<group>"; };
+		B87ED3FF25B9800000CF3EA9 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		B87ED40225BE57B700CF3EA9 /* GesturesAnimationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesAnimationUtil.swift; sourceTree = "<group>"; };
+		B883D71F25B81C4500751A63 /* AlertViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewUtil.swift; sourceTree = "<group>"; };
+		B8867AC32621489300B14462 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		B8867ACA2621547400B14462 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
+		B8867ADE26247A5500B14462 /* EditTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextVC.swift; sourceTree = "<group>"; };
+		B8867AE426247B2200B14462 /* EditTextVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTextVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +91,87 @@
 			isa = PBXGroup;
 			children = (
 				B81070A525A7E9150085983E /* AppDelegate.swift */,
-				B81070A725A7E9150085983E /* SceneDelegate.swift */,
-				B81070A925A7E9150085983E /* ViewController.swift */,
-				B81070AB25A7E9150085983E /* Main.storyboard */,
-				B81070AE25A7E9160085983E /* Assets.xcassets */,
-				B81070B025A7E9160085983E /* LaunchScreen.storyboard */,
+				B883D71E25B81C2600751A63 /* Module */,
+				B872AC3126203D280096ACD3 /* View */,
+				B872AC3226203DD20096ACD3 /* Controller */,
 				B81070B325A7E9160085983E /* Info.plist */,
+				B87ED3EE25B912B100CF3EA9 /* Explanation */,
+				B872AC44262140650096ACD3 /* Extention */,
+				B872AC3026203CCA0096ACD3 /* IBInspectableModule */,
+				B872AC43262140510096ACD3 /* Utils */,
 			);
 			path = "DrawingFor12-older";
+			sourceTree = "<group>";
+		};
+		B872AC3026203CCA0096ACD3 /* IBInspectableModule */ = {
+			isa = PBXGroup;
+			children = (
+				B872AC1C261F44300096ACD3 /* CustomSliderManager.swift */,
+				B872AC2926203C150096ACD3 /* CustomLabelManager.swift */,
+			);
+			path = IBInspectableModule;
+			sourceTree = "<group>";
+		};
+		B872AC3126203D280096ACD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B872AC2D26203C930096ACD3 /* Main.storyboard */,
+				B81070B025A7E9160085983E /* LaunchScreen.storyboard */,
+				B81070AE25A7E9160085983E /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B872AC3226203DD20096ACD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B81070A925A7E9150085983E /* DrawingVC.swift */,
+				B87A7098262541FF00FB1707 /* DrawingExtensionGesture.swift */,
+				B8867ADE26247A5500B14462 /* EditTextVC.swift */,
+				B8867AE426247B2200B14462 /* EditTextVC.xib */,
+				B81070C225A7EF5A0085983E /* PreviewImgVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B872AC43262140510096ACD3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B883D71F25B81C4500751A63 /* AlertViewUtil.swift */,
+				B87ED3FC25B966EA00CF3EA9 /* PrintInfoUtil.swift */,
+				B87ED40225BE57B700CF3EA9 /* GesturesAnimationUtil.swift */,
+				B872AC17261F3E7F0096ACD3 /* HapticsUtil.swift */,
+				B8867ACA2621547400B14462 /* ImageUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B872AC44262140650096ACD3 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				B87ED3FF25B9800000CF3EA9 /* UIViewExtension.swift */,
+				B872AC49262140E80096ACD3 /* UIColorExtension.swift */,
+				B872AC4C262141130096ACD3 /* UITextFieldExtension.swift */,
+				B8867AC32621489300B14462 /* UIImageExtension.swift */,
+				B872AC4F262141440096ACD3 /* ArrayExtension.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		B87ED3EE25B912B100CF3EA9 /* Explanation */ = {
+			isa = PBXGroup;
+			children = (
+				B87ED3EF25B912E700CF3EA9 /* 鍵盤不遮擋文字框.swift */,
+			);
+			path = Explanation;
+			sourceTree = "<group>";
+		};
+		B883D71E25B81C2600751A63 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				B81070BA25A7E9560085983E /* CanvasView.swift */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +231,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B872AC2E26203C930096ACD3 /* Main.storyboard in Resources */,
 				B81070B225A7E9160085983E /* LaunchScreen.storyboard in Resources */,
 				B81070AF25A7E9160085983E /* Assets.xcassets in Resources */,
-				B81070AD25A7E9150085983E /* Main.storyboard in Resources */,
+				B8867AE526247B2200B14462 /* EditTextVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +245,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B81070AA25A7E9150085983E /* ViewController.swift in Sources */,
+				B87ED40325BE57B700CF3EA9 /* GesturesAnimationUtil.swift in Sources */,
+				B872AC4A262140E80096ACD3 /* UIColorExtension.swift in Sources */,
+				B8867AC42621489300B14462 /* UIImageExtension.swift in Sources */,
+				B87ED3F025B912E700CF3EA9 /* 鍵盤不遮擋文字框.swift in Sources */,
+				B883D72025B81C4500751A63 /* AlertViewUtil.swift in Sources */,
+				B872AC2A26203C150096ACD3 /* CustomLabelManager.swift in Sources */,
+				B81070C325A7EF5A0085983E /* PreviewImgVC.swift in Sources */,
+				B81070AA25A7E9150085983E /* DrawingVC.swift in Sources */,
 				B81070A625A7E9150085983E /* AppDelegate.swift in Sources */,
-				B81070A825A7E9150085983E /* SceneDelegate.swift in Sources */,
+				B81070BB25A7E9560085983E /* CanvasView.swift in Sources */,
+				B87ED3FD25B966EA00CF3EA9 /* PrintInfoUtil.swift in Sources */,
+				B872AC4D262141130096ACD3 /* UITextFieldExtension.swift in Sources */,
+				B8867ACB2621547400B14462 /* ImageUtil.swift in Sources */,
+				B8867AE026247A5500B14462 /* EditTextVC.swift in Sources */,
+				B872AC50262141440096ACD3 /* ArrayExtension.swift in Sources */,
+				B872AC18261F3E7F0096ACD3 /* HapticsUtil.swift in Sources */,
+				B87A7099262541FF00FB1707 /* DrawingExtensionGesture.swift in Sources */,
+				B872AC1D261F44300096ACD3 /* CustomSliderManager.swift in Sources */,
+				B87ED40025B9800000CF3EA9 /* UIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B81070AB25A7E9150085983E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B81070AC25A7E9150085983E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B81070B025A7E9160085983E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -287,6 +403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UYP22M66K;
 				INFOPLIST_FILE = "DrawingFor12-older/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,6 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UYP22M66K;
 				INFOPLIST_FILE = "DrawingFor12-older/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

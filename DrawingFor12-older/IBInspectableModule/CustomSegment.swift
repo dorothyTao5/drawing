@@ -29,12 +29,12 @@ class CustomSegment: UIView {
 
     @IBInspectable var isOnLeftSide = true
     
-//    var lcHeight: NSLayoutConstraint!
-//    var lcWidth: NSLayoutConstraint!
+    var lcHeight: NSLayoutConstraint!
+    var lcWidth: NSLayoutConstraint!
     
     
-    var lcHeightC: CGFloat = 80
-    var lcWidthC: CGFloat = 240
+//    var lcHeightC: CGFloat = 80
+//    var lcWidthC: CGFloat = 240
     
     //segment上可滑動的View&& Label
     let subView = UIView()

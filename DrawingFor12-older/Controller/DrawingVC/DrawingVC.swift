@@ -68,11 +68,11 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.textField.delegate = self
-        
         setUpViewHexColorBG()
         setUpInitColor(color: #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))// slider *2
         doubleTapEvent(view: canvasView)
+        self.textField.delegate = self
+       
     }
    
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +85,11 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         NotificationCenter.default.removeObserver(self)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+      
+        
+    }
     
     //    MARK:- IBAction Gesture
     ///拖動viewHexColor動畫
@@ -102,7 +107,7 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     
     
     //    MARK:- IBAction
-    @IBAction func btnAddTextPressed(_ sender: UIBarButtonItem) {
+    @IBAction func btnAddTextPressed(_ sender: UIButton) {
         
         let vc = EditTextVC()
         vc.delegate = self
@@ -262,8 +267,8 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     }
     
     func setUpViewHexColorBG() {
-        viewHexColorBG.isHidden = true
         viewHexColorBG.layer.cornerRadius = 9
+        viewHexColorBG.isHidden = true
     }
     
     func setUpInitColor(color: UIColor) {

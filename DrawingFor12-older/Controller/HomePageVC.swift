@@ -34,9 +34,12 @@ extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HapticsUtil.feedbackMedium()
         switch indexPath.row {
+        
         case 0:
-            let vc = DrawingVC()
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "DrawingVC") as! DrawingVC
+           
             navigationController?.pushViewController(vc, animated: true)
         case 1 :
             let vc = CustomSegmentVC()

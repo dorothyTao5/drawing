@@ -445,6 +445,40 @@
             </objects>
             <point key="canvasLocation" x="-951" y="106"/>
         </scene>
+        <!--SettingVC-->
+        <scene sceneID="LM8-mf-sIF">
+            <objects>
+                <viewController storyboardIdentifier="SettingVC" id="e3q-iW-t5l" customClass="SettingVC" customModule="FakeMoveSection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zF6-zq-gsX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-HP-IPj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="e3q-iW-t5l" id="i4v-dE-YHg"/>
+                                    <outlet property="delegate" destination="e3q-iW-t5l" id="8aJ-f9-bj3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Zl-AG-OKJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Sf-HP-IPj" firstAttribute="bottom" secondItem="6Zl-AG-OKJ" secondAttribute="bottom" id="5f3-d3-SL3"/>
+                            <constraint firstItem="0Sf-HP-IPj" firstAttribute="leading" secondItem="6Zl-AG-OKJ" secondAttribute="leading" id="Az1-qJ-Bmy"/>
+                            <constraint firstItem="0Sf-HP-IPj" firstAttribute="top" secondItem="6Zl-AG-OKJ" secondAttribute="top" id="gMB-pO-Sxl"/>
+                            <constraint firstItem="0Sf-HP-IPj" firstAttribute="trailing" secondItem="6Zl-AG-OKJ" secondAttribute="trailing" id="p4P-GX-5lv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="0Sf-HP-IPj" id="Ilj-tX-0Us"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qII-n9-qhJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="869"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Thickness" width="52" height="52"/>

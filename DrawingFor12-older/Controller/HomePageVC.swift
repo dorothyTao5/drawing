@@ -11,7 +11,9 @@ class HomePageVC: UIViewController {
 
     @IBOutlet weak var tbv: UITableView!
     
-    var arr = ["繪圖","客製化SegmentController"]
+    var arr = ["繪圖",
+               "客製化SegmentController",
+               "section 不可交叉移動"]
     
     
     override func viewDidLoad() {
@@ -43,6 +45,10 @@ extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
         case 1 :
             let vc = CustomSegmentVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
+           
             navigationController?.pushViewController(vc, animated: true)
         default:
             print("HomePageVC tbv error" )

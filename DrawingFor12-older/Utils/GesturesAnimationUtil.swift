@@ -24,6 +24,7 @@ class GesturesAnimationUtil {
         ///get velocity in view
         let velocity = sender.velocity(in: view)
         
+        
         if sender.state == UIGestureRecognizer.State.began {
             trayOriginalCenter = viewBG.center
 //            print(trayOriginalCenter)
@@ -85,6 +86,12 @@ class GesturesAnimationUtil {
         }
         
     }
+    
+  
+    
+    
+    
+    
 }
 
 

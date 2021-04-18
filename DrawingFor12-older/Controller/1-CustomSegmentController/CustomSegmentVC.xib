@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomSegmentVC" customModule="DrawingFor12_older" customModuleProvider="target">
+            <connections>
+                <outlet property="customSegment" destination="qJd-Ql-0jQ" id="NaO-tQ-jG0"/>
+                <outlet property="lcViewH" destination="Xsz-8Q-gGy" id="iZw-9c-uxb"/>
+                <outlet property="lcViewW" destination="kgG-Dn-JQt" id="XIw-p3-e7c"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJd-Ql-0jQ" customClass="CustomSegment" customModule="DrawingFor12_older" customModuleProvider="target">
+                    <rect key="frame" x="57" y="407" width="300" height="82"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="Xsz-8Q-gGy"/>
+                        <constraint firstAttribute="width" constant="300" id="kgG-Dn-JQt"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="ColBasicTxtR">
+                            <color key="value" red="0.91930134490000004" green="0.62894315329999995" blue="0.56658589520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="ColBasicTxtL">
+                            <color key="value" red="0.39183000379999999" green="0.59592666179999998" blue="0.45151060279999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="ColSeletedR">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="ColSeletedL">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="LbTextR" value="右邊文字"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="ColSubVwR">
+                            <color key="value" red="0.91930134490000004" green="0.62894315329999995" blue="0.56658589520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="ColSubVwL">
+                            <color key="value" red="0.39183000379999999" green="0.59592666179999998" blue="0.45151060279999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.61789481879999997" green="0.61942752440000004" blue="0.64281640490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="LbTextL" value="左邊文字"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="1" green="0.89727146644934674" blue="0.90498928524672306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qJd-Ql-0jQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="V6f-a5-Ao5"/>
+                <constraint firstItem="qJd-Ql-0jQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WLN-Xf-x7U"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="77.678571428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

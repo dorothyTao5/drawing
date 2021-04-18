@@ -107,13 +107,7 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     
     
     //    MARK:- IBAction
-    @IBAction func btnAddTextPressed(_ sender: UIButton) {
-        
-        let vc = EditTextVC()
-        vc.delegate = self
-        navigationController?.pushViewController(vc, animated: true)
-        
-    }
+ 
     
     @IBAction func btnPreviewPressed(_ sender: UIButton) {
         HapticsUtil.feedbackMedium()
@@ -127,7 +121,15 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     
    
     
-    //MARK: - 顏色工具欄
+    //MARK: -  IBAction顏色工具欄
+    
+    @IBAction func btnAddTextPressed(_ sender: UIButton) {
+        
+        let vc = EditTextVC()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     @IBAction func onClickSave(_ sender: Any) {
         

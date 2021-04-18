@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XibViewForCell" customModule="FakeMoveSection" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCheck" destination="ujO-EJ-sZk" id="QIp-JA-LeD"/>
+                <outlet property="lbCellItem" destination="m6c-v2-7SB" id="Z5G-Zm-Hyp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujO-EJ-sZk">
+                    <rect key="frame" x="20" y="11.5" width="27" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="27" id="8tw-nK-s3U"/>
+                        <constraint firstAttribute="height" constant="27" id="vEP-ZS-TYY"/>
+                    </constraints>
+                    <state key="normal" image="stopBtn">
+                        <color key="titleColor" systemColor="systemGreenColor"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPressed:" destination="-1" eventType="touchUpInside" id="y62-bz-YV2"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6c-v2-7SB">
+                    <rect key="frame" x="67" y="15.5" width="243" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="m6c-v2-7SB" secondAttribute="height" multiplier="83:7" id="WRX-LP-SXZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFy-Zp-SGA" userLabel="bottomLine">
+                    <rect key="frame" x="0.0" y="49" width="330" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="m6c-v2-7SB" secondAttribute="trailing" constant="20" id="1Dy-aN-hai"/>
+                <constraint firstItem="NFy-Zp-SGA" firstAttribute="top" secondItem="m6c-v2-7SB" secondAttribute="bottom" constant="13" id="D6T-jy-QZ5"/>
+                <constraint firstAttribute="trailing" secondItem="NFy-Zp-SGA" secondAttribute="trailing" id="OP6-2m-Ff0"/>
+                <constraint firstItem="NFy-Zp-SGA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RhT-zw-qR2"/>
+                <constraint firstItem="ujO-EJ-sZk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="X3U-yz-ydd"/>
+                <constraint firstItem="NFy-Zp-SGA" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="bCh-UN-EhT"/>
+                <constraint firstItem="ujO-EJ-sZk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="d5i-9G-q2v"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="m6c-v2-7SB" secondAttribute="bottom" constant="14" id="qtG-N5-rq7"/>
+                <constraint firstItem="m6c-v2-7SB" firstAttribute="leading" secondItem="ujO-EJ-sZk" secondAttribute="trailing" constant="20" id="s1I-PP-9EL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="76.811594202898561" y="-87.053571428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="stopBtn" width="190" height="190"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

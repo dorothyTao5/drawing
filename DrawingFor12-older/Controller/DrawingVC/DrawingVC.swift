@@ -71,7 +71,7 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         self.textField.delegate = self
         
         setUpViewHexColorBG()
-        setUpInitColor(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        setUpInitColor(color: #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))// slider *2
         doubleTapEvent(view: canvasView)
     }
    

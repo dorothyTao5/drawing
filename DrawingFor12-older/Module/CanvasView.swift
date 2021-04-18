@@ -36,6 +36,8 @@ class CanvasView: UIView {
         }
 
         lines.forEach { (line) in
+            let lineP = line.points
+            
             for (i, p) in (line.points?.enumerated())! {
                 if i == 0 {
                     context.move(to: p)

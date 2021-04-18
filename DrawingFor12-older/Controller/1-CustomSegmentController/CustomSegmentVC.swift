@@ -17,16 +17,7 @@ class CustomSegmentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        customSegment.lcHeight = lcViewH
-        customSegment.lcWidth = lcViewW
-        
-        let rCenterPoint = customSegment.getRightCGCenter()
-        customSegment.setupDownRightLabel(cgpoint: rCenterPoint)
-        let lCenterPoint =  customSegment.getLeftCGCenter()
-        customSegment.setupDownLeftLabel(cgpoint: lCenterPoint)
-        customSegment.setUpSelectedView(cgpoint: lCenterPoint)
-        customSegment.vOriginal = lCenterPoint
-        customSegment.isOnLeftSide = true
+        customSegment.connectCustomSegmentDataSourct(lcBGViewH: lcViewH, lcBGViewW: lcViewW)
        
         
         

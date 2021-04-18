@@ -56,6 +56,7 @@
                             <color key="value" red="0.61789481879999997" green="0.61942752440000004" blue="0.64281640490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="LbTextL" value="左邊文字"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOnLeftSide" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>

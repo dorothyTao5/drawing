@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 class CustomSegment: UIView {
     
+    
+    @IBInspectable var isOnLeftSide:Bool = true
     //segment【沒有選到的】normal text color
     @IBInspectable var ColBasicTxtR: UIColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
     @IBInspectable var ColBasicTxtL: UIColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
@@ -26,15 +28,12 @@ class CustomSegment: UIView {
     //segment 的外框
     @IBInspectable var borderWidth: CGFloat = 2
     @IBInspectable var borderColor: UIColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-
-    @IBInspectable var isOnLeftSide = true
+    
+    
     
     var lcHeight: NSLayoutConstraint!
     var lcWidth: NSLayoutConstraint!
     
-    
-//    var lcHeightC: CGFloat = 80
-//    var lcWidthC: CGFloat = 240
     
     //segment上可滑動的View&& Label
     let subView = UIView()
@@ -61,10 +60,10 @@ class CustomSegment: UIView {
     
   
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+        
     }
     
     override init(frame: CGRect) {
@@ -73,6 +72,24 @@ class CustomSegment: UIView {
     }
     
     
+    
+    //必須呼叫的Func
+    func connectCustomSegmentDataSourct(lcBGViewH: NSLayoutConstraint, lcBGViewW:NSLayoutConstraint){
+        lcHeight = lcBGViewH
+        lcWidth = lcBGViewW
+        
+        let rCenterPoint = getRightCGCenter()
+        let lCenterPoint =  getLeftCGCenter()
+        setupDownRightLabel(cgpoint: rCenterPoint)
+        setupDownLeftLabel(cgpoint: lCenterPoint)
+        if isOnLeftSide == true {
+            setUpSelectedView(cgpoint: lCenterPoint)
+        }else {
+            setUpSelectedView(cgpoint: rCenterPoint)
+        }
+        vOriginal = lCenterPoint
+//        commonInit()
+    }
     
     
     //    MARK: - functions
@@ -169,6 +186,9 @@ class CustomSegment: UIView {
         label.backgroundColor = .clear
         return label
     }
+    
+  
+    
     
    //    MARK: - SetUpLabelLike
     func setUpSelectedLabel( downLabel:UILabel,

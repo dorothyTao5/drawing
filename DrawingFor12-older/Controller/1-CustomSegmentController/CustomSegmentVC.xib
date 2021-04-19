@@ -42,7 +42,7 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="ColSeletedL">
                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="LbTextR" value="右邊文字"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="LbTextR" value="右Red"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="ColSubVwR">
                             <color key="value" red="0.91930134490000004" green="0.62894315329999995" blue="0.56658589520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
@@ -50,13 +50,13 @@
                             <color key="value" red="0.39183000379999999" green="0.59592666179999998" blue="0.45151060279999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
+                            <real key="value" value="0.69999999999999996"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.61789481879999997" green="0.61942752440000004" blue="0.64281640490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" systemColor="systemGray4Color"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="LbTextL" value="左邊文字"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOnLeftSide" value="NO"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="LbTextL" value="左Blue"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOnLeftSide" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
@@ -72,6 +72,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

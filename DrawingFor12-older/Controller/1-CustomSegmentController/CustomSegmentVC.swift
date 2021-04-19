@@ -17,7 +17,7 @@ class CustomSegmentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        customSegment.connectCustomSegmentDataSourct(lcBGViewH: lcViewH, lcBGViewW: lcViewW)
+        customSegment.connectCustomSegment(lcBGViewH: lcViewH, lcBGViewW: lcViewW)
        
         
         

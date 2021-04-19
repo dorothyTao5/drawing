@@ -8,11 +8,11 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class CustomSegment: UIView {
     
     
-    @IBInspectable var isOnLeftSide:Bool = true
+    @IBInspectable var isOnLeftSide: Bool = true
     //segment【沒有選到的】normal text color
     @IBInspectable var ColBasicTxtR: UIColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
     @IBInspectable var ColBasicTxtL: UIColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
@@ -43,10 +43,18 @@ class CustomSegment: UIView {
     
    
     lazy var vOriginal : CGPoint!  = {
-        getLeftCGCenter()
+        if isOnLeftSide == true {
+            return getLeftCGCenter()
+        }else {
+           return getRightCGCenter()
+        }
     }()
     lazy var movedPosition :CGPoint! = {
-        getLeftCGCenter()
+        if isOnLeftSide == true {
+            return getLeftCGCenter()
+        }else {
+           return getRightCGCenter()
+        }
     }()
     
     
@@ -71,24 +79,48 @@ class CustomSegment: UIView {
         commonInit()
     }
     
-    
+//    func setupDownRightLabel(cgpoint:CGPoint) {
+//        lbDownR = setUpLabel(label: lbDownR)
+//        lbDownR.center = getRightCGCenter()
+//        lbDownR.text = LbTextR
+//        self.addSubview(lbDownR)
+//    }
+//    func setupDownLeftLabel(cgpoint:CGPoint) {
+//        lbDownL = setUpLabel(label: lbDownL)
+//        lbDownL.center = getLeftCGCenter()
+//        lbDownL.text = LbTextL
+//        self.addSubview(lbDownL)
+//    }
     
     //必須呼叫的Func
-    func connectCustomSegmentDataSourct(lcBGViewH: NSLayoutConstraint, lcBGViewW:NSLayoutConstraint){
+    func connectCustomSegment(lcBGViewH: NSLayoutConstraint, lcBGViewW:NSLayoutConstraint){
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor.cgColor
+        
         lcHeight = lcBGViewH
         lcWidth = lcBGViewW
-        
         let rCenterPoint = getRightCGCenter()
         let lCenterPoint =  getLeftCGCenter()
-        setupDownRightLabel(cgpoint: rCenterPoint)
-        setupDownLeftLabel(cgpoint: lCenterPoint)
-        if isOnLeftSide == true {
+        
+        setUpDownLabel(lbDown: &lbDownR, lbText: LbTextR, getCenter: getRightCGCenter)
+        setUpDownLabel(lbDown: &lbDownL, lbText: LbTextL, getCenter: getLeftCGCenter)
+        
+        switch isOnLeftSide {
+        case true:
             setUpSelectedView(cgpoint: lCenterPoint)
-        }else {
+            vOriginal = lCenterPoint
+        case false:
             setUpSelectedView(cgpoint: rCenterPoint)
+            vOriginal = rCenterPoint
         }
-        vOriginal = lCenterPoint
-//        commonInit()
+//        if isOnLeftSide == true {
+//            setUpSelectedView(cgpoint: lCenterPoint)
+//            vOriginal = lCenterPoint
+//        }else {
+//            setUpSelectedView(cgpoint: rCenterPoint)
+//            vOriginal = rCenterPoint
+//        }
+        
     }
     
     
@@ -97,13 +129,9 @@ class CustomSegment: UIView {
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.size.height/2
-        self.layer.borderWidth = 2
-        self.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
        
         lbDownL.text = LbTextL
         lbDownR.text = LbTextR
-        
-       
         
         if isOnLeftSide == true {
             lbUp.text = lbDownL.text
@@ -111,13 +139,10 @@ class CustomSegment: UIView {
             lbUp.text = lbDownR.text
         }
         
-        
         let panH = UIPanGestureRecognizer(target: self, action: #selector(panHorizontal))
         subView.addGestureRecognizer(panH)
         
     }
-    
-   
     
     
     func getLeftCGCenter() -> CGPoint {
@@ -133,11 +158,13 @@ class CustomSegment: UIView {
         return CGPoint(x: rightXPoint ,y: yCenterPoint )
     }
     
+    
     //    MARK: - setUpViews
     func setUpSelectedView(cgpoint:CGPoint) {
         
         subView.frame = CGRect(x: 0, y: 0, width: lcWidth.constant / 2, height: lcHeight.constant )
         subView.center = cgpoint
+        lbUp.center = cgpoint
         
         if isOnLeftSide == true {
             subView.backgroundColor = ColSubVwL
@@ -166,24 +193,19 @@ class CustomSegment: UIView {
         self.addSubview(subView)
     }
     
-    func setupDownRightLabel(cgpoint:CGPoint) {
-        lbDownR = setUpLabel(label: lbDownR)
-        lbDownR.center = getRightCGCenter()
-        lbDownR.text = LbTextR
-        self.addSubview(lbDownR)
-    }
-    func setupDownLeftLabel(cgpoint:CGPoint) {
-        lbDownL = setUpLabel(label: lbDownL)
-        lbDownL.center = getLeftCGCenter()
-        lbDownL.text = LbTextL
-        self.addSubview(lbDownL)
+    
+    func setUpDownLabel(lbDown: inout UILabel,lbText:String, getCenter: ()->CGPoint) {
+        lbDown = setUpLabel(label: lbDown)
+        lbDown.center = getCenter()
+        lbDown.text = lbText
+        self.addSubview(lbDown)
     }
     
     func setUpLabel(label:UILabel) -> UILabel {
-        label.frame = CGRect(x: 0, y: 0, width: lcWidth.constant / 2, height: lcWidth.constant)
+        label.frame = CGRect(x: 0, y: 0, width: lcWidth.constant / 2, height: lcHeight.constant)
         label.textAlignment = .center
-        label.center = subView.center
         label.backgroundColor = .clear
+        
         return label
     }
     
@@ -262,6 +284,7 @@ class CustomSegment: UIView {
                 guard subView.center.x > rightEdge.x else { return subView.center = rightEdge}
                 subView.center = CGPoint(x: vOriginal.x + translation.x, y: vOriginal.y)
                 print("is on left Side")
+                
             } else if sender.state == UIGestureRecognizer.State.ended {
                 
                 if velocity.x < 0 {

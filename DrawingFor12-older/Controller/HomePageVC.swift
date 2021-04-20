@@ -13,7 +13,8 @@ class HomePageVC: UIViewController {
     
     var arr = ["繪圖",
                "客製化SegmentController",
-               "section 不可交叉移動"]
+               "section 不可交叉移動",
+               "DrawingOnUIImageView"]
     
     
     override func viewDidLoad() {
@@ -50,6 +51,11 @@ extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
            
             navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            let vc = DrawingOnImgViewVC()
+            navigationController?.pushViewController(vc, animated: true)
+            
+            
         default:
             print("HomePageVC tbv error" )
         }

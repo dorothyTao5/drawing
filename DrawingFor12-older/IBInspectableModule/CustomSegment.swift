@@ -6,6 +6,14 @@
 
 //https://suragch.medium.com/creating-custom-views-in-ios-for-multiple-reuse-b2307a57d792
 
+/// - tag: 必須呼叫的Func
+/// - tag: [var segmentSwitchedToLeft : (()->Void)?   var segmentSwitchedToRight : (()->Void)?] 控制移動過後的行為
+/// - tag: [connectCustomSegment] 在viewdidload 建立介面
+/// ex： in view did load
+/// customSegment.connectCustomSegment(lcBGViewH: lcViewH, lcBGViewW: lcViewW)
+/// customSegment.segmentSwitchedLeft2 = thisIsAFunc
+/// func thisIsAFunc ( )    {   ...    }
+
 import UIKit
 
 //@IBDesignable
@@ -22,18 +30,14 @@ class CustomSegment: UIView {
     //segment 左右兩邊Label text
     @IBInspectable var LbTextR: String = "LbRight"
     @IBInspectable var LbTextL: String = "LbLeft"
+    //所有label.text 大小
+    @IBInspectable var TextSize: CGFloat = 20
     //Segment上可移動的背景顏色
     @IBInspectable var ColSubVwR: UIColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
     @IBInspectable var ColSubVwL: UIColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
     //segment 的外框
     @IBInspectable var borderWidth: CGFloat = 2
     @IBInspectable var borderColor: UIColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-    
-    
-    
-    var lcHeight: NSLayoutConstraint!
-    var lcWidth: NSLayoutConstraint!
-    
     
     //segment上可滑動的View&& Label
     let subView = UIView()
@@ -66,7 +70,13 @@ class CustomSegment: UIView {
         getRightCGCenter()
     }()
     
-  
+    //MARK: - **必須設定的var**
+    ///switch 後的行為
+    var segmentSwitched : (()->Void)?
+    ///給view的高和寬
+    var lcHeight: NSLayoutConstraint!
+    var lcWidth: NSLayoutConstraint!
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -79,20 +89,10 @@ class CustomSegment: UIView {
         commonInit()
     }
     
-//    func setupDownRightLabel(cgpoint:CGPoint) {
-//        lbDownR = setUpLabel(label: lbDownR)
-//        lbDownR.center = getRightCGCenter()
-//        lbDownR.text = LbTextR
-//        self.addSubview(lbDownR)
-//    }
-//    func setupDownLeftLabel(cgpoint:CGPoint) {
-//        lbDownL = setUpLabel(label: lbDownL)
-//        lbDownL.center = getLeftCGCenter()
-//        lbDownL.text = LbTextL
-//        self.addSubview(lbDownL)
-//    }
+
     
-    //必須呼叫的Func
+    //MARK: - **必須呼叫的Func**
+    ///建立segment
     func connectCustomSegment(lcBGViewH: NSLayoutConstraint, lcBGViewW:NSLayoutConstraint){
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
@@ -113,18 +113,16 @@ class CustomSegment: UIView {
             setUpSelectedView(cgpoint: rCenterPoint)
             vOriginal = rCenterPoint
         }
-//        if isOnLeftSide == true {
-//            setUpSelectedView(cgpoint: lCenterPoint)
-//            vOriginal = lCenterPoint
-//        }else {
-//            setUpSelectedView(cgpoint: rCenterPoint)
-//            vOriginal = rCenterPoint
-//        }
-        
+
     }
     
     
-    //    MARK: - functions
+    //    MARK: - Functions
+    
+    
+    
+    //MARK: - Get Position
+    
     func commonInit() {
         
         self.layer.masksToBounds = true
@@ -142,8 +140,14 @@ class CustomSegment: UIView {
         let panH = UIPanGestureRecognizer(target: self, action: #selector(panHorizontal))
         subView.addGestureRecognizer(panH)
         
+        lbDownL.isUserInteractionEnabled = true
+        lbDownR.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapRecognize))
+        lbDownL.addGestureRecognizer(tapGesture)
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(tapRecognize))
+        lbDownR.addGestureRecognizer(tapGesture2)
+        
     }
-    
     
     func getLeftCGCenter() -> CGPoint {
         let yCenterPoint = lcHeight.constant / 2
@@ -158,6 +162,58 @@ class CustomSegment: UIView {
         return CGPoint(x: rightXPoint ,y: yCenterPoint )
     }
     
+    func animateSubViewFromLeftToRight() {
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.subView.center = self.rightEdge
+        })
+        isOnLeftSide = false
+        setUpUnselectedLabel(downLabel: lbDownL, basicColor: ColBasicTxtL)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
+        setUpSelectedLabel( downLabel: lbDownL ,
+                           selectedLabel: lbDownR,
+                           basicColor: ColBasicTxtL,
+                           activeTxtCol: ColSeletedR,
+                           colorSubViewBG: ColSubVwR)
+        }
+        self.segmentSwitched!()
+       
+    }
+    
+    func animateSubViewFromRightToLeft() {
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.subView.center = self.leftEdge
+        })
+        isOnLeftSide = true
+        setUpUnselectedLabel(downLabel: lbDownR, basicColor: ColBasicTxtR)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
+            setUpSelectedLabel( downLabel: lbDownR,
+                               selectedLabel: lbDownL,
+                               basicColor: ColBasicTxtR,
+                               activeTxtCol: ColSeletedL,
+                               colorSubViewBG: ColSubVwL)
+        }
+        self.segmentSwitched!()
+        
+    }
+    
+    //    MARK: - SetUpLabelAlike
+     func setUpSelectedLabel( downLabel:UILabel,
+                             selectedLabel:UILabel,
+                             basicColor: UIColor,
+                             activeTxtCol: UIColor,
+                             colorSubViewBG: UIColor) {
+         
+        
+         selectedLabel.textColor = activeTxtCol
+         lbUp.text = selectedLabel.text
+         lbUp.textColor = selectedLabel.textColor
+         subView.backgroundColor = colorSubViewBG
+     }
+     
+     func setUpUnselectedLabel( downLabel:UILabel, basicColor: UIColor){
+         downLabel.textColor = basicColor
+         downLabel.isHidden = false
+     }
     
     //    MARK: - setUpViews
     func setUpSelectedView(cgpoint:CGPoint) {
@@ -196,6 +252,7 @@ class CustomSegment: UIView {
     
     func setUpDownLabel(lbDown: inout UILabel,lbText:String, getCenter: ()->CGPoint) {
         lbDown = setUpLabel(label: lbDown)
+        lbDown.font = lbDown.font.withSize(TextSize)
         lbDown.center = getCenter()
         lbDown.text = lbText
         self.addSubview(lbDown)
@@ -203,34 +260,48 @@ class CustomSegment: UIView {
     
     func setUpLabel(label:UILabel) -> UILabel {
         label.frame = CGRect(x: 0, y: 0, width: lcWidth.constant / 2, height: lcHeight.constant)
+        label.font = label.font.withSize(TextSize)
         label.textAlignment = .center
         label.backgroundColor = .clear
         
         return label
     }
     
-  
+  ///已經合併成 setUpDownLabel（）
+    //    func setupDownRightLabel(cgpoint:CGPoint) {
+    //        lbDownR = setUpLabel(label: lbDownR)
+    //        lbDownR.center = getRightCGCenter()
+    //        lbDownR.text = LbTextR
+    //        self.addSubview(lbDownR)
+    //    }
+    //    func setupDownLeftLabel(cgpoint:CGPoint) {
+    //        lbDownL = setUpLabel(label: lbDownL)
+    //        lbDownL.center = getLeftCGCenter()
+    //        lbDownL.text = LbTextL
+    //        self.addSubview(lbDownL)
+    //    }
     
     
-   //    MARK: - SetUpLabelLike
-    func setUpSelectedLabel( downLabel:UILabel,
-                            selectedLabel:UILabel,
-                            basicColor: UIColor,
-                            activeTxtCol: UIColor,
-                            colorSubViewBG: UIColor) {
-        
-       
-        selectedLabel.textColor = activeTxtCol
-        lbUp.text = selectedLabel.text
-        lbUp.textColor = selectedLabel.textColor
-        subView.backgroundColor = colorSubViewBG
-    }
+    //MARK: - @objc func
     
-    func setUpUnselectedLabel( downLabel:UILabel, basicColor: UIColor){
-        downLabel.textColor = basicColor
-        downLabel.isHidden = false
-    }
+
    
+    //MARK: - 點擊label移動segment
+    @objc func tapRecognize(sender:UITapGestureRecognizer) {
+        guard let label = sender.view as? UILabel else {return}
+ 
+        switch label.text {
+        case LbTextL:
+            animateSubViewFromRightToLeft()
+
+        case LbTextR:
+            animateSubViewFromLeftToRight()
+
+        default:
+            print("tapRecognize got error")
+        }
+        
+    }
     
     //MARK: - Pan label左右移動
     @objc func panHorizontal(sender: UIPanGestureRecognizer) {
@@ -252,25 +323,13 @@ class CustomSegment: UIView {
                 print("is on right Side")
                
             } else if sender.state == UIGestureRecognizer.State.ended {
-               
                 if velocity.x > 0 {
-                    UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                        self.subView.center = self.rightEdge
-                    })
-                    isOnLeftSide = false
-                    setUpUnselectedLabel(downLabel: lbDownL, basicColor: ColBasicTxtL)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
-                    setUpSelectedLabel( downLabel: lbDownL ,
-                                       selectedLabel: lbDownR,
-                                       basicColor: ColBasicTxtL,
-                                       activeTxtCol: ColSeletedR,
-                                       colorSubViewBG: ColSubVwR)
-                    }
+                    animateSubViewFromLeftToRight()
+
                 }else {
                     subView.center = leftEdge
                 }
                
-                
             }
            
             
@@ -286,32 +345,21 @@ class CustomSegment: UIView {
                 print("is on left Side")
                 
             } else if sender.state == UIGestureRecognizer.State.ended {
-                
                 if velocity.x < 0 {
-                    UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                        self.subView.center = self.leftEdge
-                    })
-                    isOnLeftSide = true
-                    print("//right to left",velocity.x)
-                    setUpUnselectedLabel(downLabel: lbDownR, basicColor: ColBasicTxtR)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
-                        setUpSelectedLabel( downLabel: lbDownR,
-                                           selectedLabel: lbDownL,
-                                           basicColor: ColBasicTxtR,
-                                           activeTxtCol: ColSeletedL,
-                                           colorSubViewBG: ColSubVwL)
-                    }
-                    
+                    animateSubViewFromRightToLeft()
+
                 }else {
                     subView.center = rightEdge
                 }
                
             }
-            
-            
-       
+             
         }
-       
+        
         
     }
+    
+    
+    
+    
 }

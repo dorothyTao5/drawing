@@ -47,6 +47,7 @@ extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
         case 1 :
             let vc = CustomSegmentVC()
             navigationController?.pushViewController(vc, animated: true)
+//            self.present(vc, animated: true, completion: nil)
         case 2:
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
            

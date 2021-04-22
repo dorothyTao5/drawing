@@ -16,6 +16,10 @@
 		B8486901262D6F0E00C95435 /* DrawingOnImgViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84868FF262D6F0E00C95435 /* DrawingOnImgViewVC.swift */; };
 		B8486902262D6F0E00C95435 /* DrawingOnImgViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8486900262D6F0E00C95435 /* DrawingOnImgViewVC.xib */; };
 		B8486906262D6F2F00C95435 /* DrawnImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8486905262D6F2F00C95435 /* DrawnImageView.swift */; };
+		B8486943262FB6E400C95435 /* BlueTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B848693F262FB6E400C95435 /* BlueTheme.swift */; };
+		B8486944262FB6E400C95435 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8486940262FB6E400C95435 /* ThemeProtocol.swift */; };
+		B8486945262FB6E400C95435 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8486941262FB6E400C95435 /* Theme.swift */; };
+		B8486946262FB6E400C95435 /* RedTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8486942262FB6E400C95435 /* RedTheme.swift */; };
 		B872AC18261F3E7F0096ACD3 /* HapticsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC17261F3E7F0096ACD3 /* HapticsUtil.swift */; };
 		B872AC1D261F44300096ACD3 /* CustomSliderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC1C261F44300096ACD3 /* CustomSliderManager.swift */; };
 		B872AC2A26203C150096ACD3 /* CustomLabelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC2926203C150096ACD3 /* CustomLabelManager.swift */; };
@@ -56,6 +60,10 @@
 		B84868FF262D6F0E00C95435 /* DrawingOnImgViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingOnImgViewVC.swift; sourceTree = "<group>"; };
 		B8486900262D6F0E00C95435 /* DrawingOnImgViewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawingOnImgViewVC.xib; sourceTree = "<group>"; };
 		B8486905262D6F2F00C95435 /* DrawnImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawnImageView.swift; sourceTree = "<group>"; };
+		B848693F262FB6E400C95435 /* BlueTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueTheme.swift; sourceTree = "<group>"; };
+		B8486940262FB6E400C95435 /* ThemeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		B8486941262FB6E400C95435 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B8486942262FB6E400C95435 /* RedTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedTheme.swift; sourceTree = "<group>"; };
 		B872AC17261F3E7F0096ACD3 /* HapticsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsUtil.swift; sourceTree = "<group>"; };
 		B872AC1C261F44300096ACD3 /* CustomSliderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSliderManager.swift; sourceTree = "<group>"; };
 		B872AC2926203C150096ACD3 /* CustomLabelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabelManager.swift; sourceTree = "<group>"; };
@@ -137,6 +145,25 @@
 			path = "3-DrawingOnUIImageView";
 			sourceTree = "<group>";
 		};
+		B848693D262FB6D000C95435 /* 4-ChangeTheme */ = {
+			isa = PBXGroup;
+			children = (
+				B848693E262FB6E400C95435 /* ThemeManager */,
+			);
+			path = "4-ChangeTheme";
+			sourceTree = "<group>";
+		};
+		B848693E262FB6E400C95435 /* ThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				B8486941262FB6E400C95435 /* Theme.swift */,
+				B8486940262FB6E400C95435 /* ThemeProtocol.swift */,
+				B848693F262FB6E400C95435 /* BlueTheme.swift */,
+				B8486942262FB6E400C95435 /* RedTheme.swift */,
+			);
+			path = ThemeManager;
+			sourceTree = "<group>";
+		};
 		B872AC3026203CCA0096ACD3 /* IBInspectableModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +192,7 @@
 				B8F03EFB2629218900783A5A /* 1-CustomSegmentController */,
 				B88DA269262BE65300C0B37E /* 2-SettingVC */,
 				B84868FE262D6E9F00C95435 /* 3-DrawingOnUIImageView */,
+				B848693D262FB6D000C95435 /* 4-ChangeTheme */,
 				B88DA268262BE63800C0B37E /* WorkingOn */,
 			);
 			path = Controller;
@@ -354,18 +382,22 @@
 				B81070C325A7EF5A0085983E /* PreviewImgVC.swift in Sources */,
 				B81070AA25A7E9150085983E /* DrawingVC.swift in Sources */,
 				B8486906262D6F2F00C95435 /* DrawnImageView.swift in Sources */,
+				B8486943262FB6E400C95435 /* BlueTheme.swift in Sources */,
 				B81070A625A7E9150085983E /* AppDelegate.swift in Sources */,
 				B81070BB25A7E9560085983E /* CanvasView.swift in Sources */,
 				B8F03EF626291E7F00783A5A /* HomePageVC.swift in Sources */,
 				B87ED3FD25B966EA00CF3EA9 /* PrintInfoUtil.swift in Sources */,
 				B872AC4D262141130096ACD3 /* UITextFieldExtension.swift in Sources */,
 				B8867ACB2621547400B14462 /* ImageUtil.swift in Sources */,
+				B8486944262FB6E400C95435 /* ThemeProtocol.swift in Sources */,
 				B8867AE026247A5500B14462 /* EditTextVC.swift in Sources */,
 				B872AC50262141440096ACD3 /* ArrayExtension.swift in Sources */,
 				B872AC18261F3E7F0096ACD3 /* HapticsUtil.swift in Sources */,
 				B8486901262D6F0E00C95435 /* DrawingOnImgViewVC.swift in Sources */,
 				B87A7099262541FF00FB1707 /* DrawingExtensionGesture.swift in Sources */,
 				B872AC1D261F44300096ACD3 /* CustomSliderManager.swift in Sources */,
+				B8486945262FB6E400C95435 /* Theme.swift in Sources */,
+				B8486946262FB6E400C95435 /* RedTheme.swift in Sources */,
 				B87ED40025B9800000CF3EA9 /* UIViewExtension.swift in Sources */,
 				B8F03EFE262921B000783A5A /* CustomSegmentVC.swift in Sources */,
 			);

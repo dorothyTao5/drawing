@@ -25,7 +25,8 @@ open class CustomSliderManager : UISlider {
     // Slider 無圖片時的顏色
     @IBInspectable var thumbBgCol: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
-    private lazy var thumbView: UIImageView = {
+    //*** 最下方 注： 1
+    open lazy var thumbView: UIImageView = {
         let thumb = UIImageView()
         
         //如果沒有客製化圖片 image的部分將以顏色代替
@@ -46,8 +47,8 @@ open class CustomSliderManager : UISlider {
         
        }
     
-    
-    private func thumbImage(radius: CGFloat) -> UIImage {
+    //*** 最下方 注： 1
+    open func thumbImage(radius: CGFloat) -> UIImage {
         
         thumbView.frame = CGRect(x: 0, y: radius / 2, width: radius, height: radius)
         
@@ -73,3 +74,15 @@ open class CustomSliderManager : UISlider {
     }
     
 }
+
+
+/// - tag: 注: 1
+/*
+ 通常應該設為private； 在特殊情況下 比如 設定風格 的時候
+ 需要修改這裡達到即時更新圖片
+ 範例程式：
+ ThemeManager.MyVc?.mySlider.thumbView.image = Theme.current.imgArrow
+ let thumb = ThemeManager.MyVc?.mySlider.thumbImage(radius: CGFloat(25))
+ ThemeManager.MyVc?.mySlider.setThumbImage(thumb, for: .normal)
+ 
+ */

@@ -9,10 +9,31 @@
 /// - tag: 必須呼叫的Func
 /// - tag: [var segmentSwitchedToLeft : (()->Void)?   var segmentSwitchedToRight : (()->Void)?] 控制移動過後的行為
 /// - tag: [connectCustomSegment] 在viewdidload 建立介面
+/// - tag: view‘s custom class 要設定成 CustomSegment
 /// ex： in view did load
-/// customSegment.connectCustomSegment(lcBGViewH: lcViewH, lcBGViewW: lcViewW)
-/// customSegment.segmentSwitchedLeft2 = thisIsAFunc
-/// func thisIsAFunc ( )    {   ...    }
+/*
+ override func viewDidLoad() {
+     super.viewDidLoad()
+    customSegment.connectCustomSegment(lcBGViewH: lcBGViewH, lcBGViewW: lcViewW)
+    customSegment.segmentSwitched = switchedBehaviorFunc
+}
+ 
+func switchedBehaviorFunc ( )    {
+    switch vwSgc.isOnLeftSide {
+    case true: //right to left = green
+        print(" switchedToLeft =",vwSgc.isOnLeftSide )
+        userDefaultSave(key: .ThemeIsRed, saveObj: false)
+        
+        Theme.current = BlueTheme()
+        
+    case false: //left to right = red
+        print(" switchedToRight =",vwSgc.isOnLeftSide )
+        
+        userDefaultSave(key: .ThemeIsRed, saveObj: true)
+        Theme.current = RedTheme()
+    }  }
+*/
+
 
 import UIKit
 
@@ -320,8 +341,17 @@ class CustomSegment: UIView {
             } else if sender.state == UIGestureRecognizer.State.changed {
                 guard subView.center.x >  leftEdge.x else { return subView.center = leftEdge}
                 subView.center = CGPoint(x: vOriginal.x + translation.x, y: vOriginal.y)
+                /*
+                 保留滑動到中間的動畫程式
+                if subView.center.x > rightEdge.x {
+                
+                }else {
+                subView.center = CGPoint(x: vOriginal.x + translation.x, y: vOriginal.y)
+                
+                }
+                */
                 print("is on right Side")
-               
+                
             } else if sender.state == UIGestureRecognizer.State.ended {
                 if velocity.x > 0 {
                     animateSubViewFromLeftToRight()

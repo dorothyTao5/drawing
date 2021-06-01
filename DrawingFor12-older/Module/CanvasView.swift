@@ -36,7 +36,7 @@ class CanvasView: UIView {
         }
 
         lines.forEach { (line) in
-            let lineP = line.points
+//            let lineP = line.points
             
             for (i, p) in (line.points?.enumerated())! {
                 if i == 0 {
@@ -54,25 +54,53 @@ class CanvasView: UIView {
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
-            lines.append(TouchPointsAndColor(color: UIColor(), points: [CGPoint]()))
-        
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//            lines.append(TouchPointsAndColor(color: UIColor(), points: [CGPoint]()))
+//
+//    }
+//
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard let touch = touches.first?.location(in: nil) else {
+//            return
+//        }
+//
+//        guard var lastPoint = lines.popLast() else {return}
+//        lastPoint.points?.append(touch)
+//        lastPoint.color = strokeColor
+//        lastPoint.width = strokeWidth
+//        lastPoint.opacity = strokeOpacity
+//        lines.append(lastPoint)
+//        setNeedsDisplay()
+//    }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first?.location(in: nil) else {
-            return
+    
+    @objc func move(gesture : UIPanGestureRecognizer)
+        {
+            let state = gesture.state
+            switch state  {
+            case .began:
+                lines.append(TouchPointsAndColor(color: UIColor(), points: [CGPoint]()))
+            case .ended:
+                fallthrough
+
+            case .changed:
+                gesture.setTranslation(gesture.location(in: self), in: self)
+                let p = gesture.translation(in: self)
+
+                guard var lastPoint = lines.popLast() else {return}
+                lastPoint.points?.append(p)
+                print(p)
+                lastPoint.color = strokeColor
+                lastPoint.width = strokeWidth
+                lastPoint.opacity = strokeOpacity
+                lines.append(lastPoint)
+
+                setNeedsDisplay()
+            default:
+                break
+            }
         }
-        
-        guard var lastPoint = lines.popLast() else {return}
-        lastPoint.points?.append(touch)
-        lastPoint.color = strokeColor
-        lastPoint.width = strokeWidth
-        lastPoint.opacity = strokeOpacity
-        lines.append(lastPoint)
-        setNeedsDisplay()
-    }
     
     func clearCanvasView() {
         lines.removeAll()

@@ -8,7 +8,24 @@
 import Foundation
 import UIKit
 
+struct DrawnPointsAndColor {
+    var color: UIColor?
+    var width: CGFloat?
+    var opacity: CGFloat?
+    var paths: [CGPath]?
+ 
+    init(color: UIColor, paths: [CGPath]?) {
+        self.color = color
+        self.paths = paths
+    }
+}
+
 class DrawnImageView: UIImageView {
+    var lines = [DrawnPointsAndColor]()
+    var strokeWidth: CGFloat = 1.0
+    var strokeColor: UIColor = .black
+    var strokeOpacity: CGFloat = 1.0
+    
     private lazy var path = UIBezierPath()
     private lazy var previousTouchPoint = CGPoint.zero
     lazy var shapeLayer = CAShapeLayer()

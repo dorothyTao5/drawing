@@ -5,6 +5,7 @@
 //  Created by 2010011NB01 on 2021/1/8.
 //
 //youtube link: https://www.youtube.com/watch?v=kAiknPhkWmc
+//source code： https://github.com/1992Shubham/DrawingApp
 
 // To Do List：
 /// - tag:  1- 點擊view 取消編輯模式 【叉叉 isHiden = true】
@@ -72,6 +73,9 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         setUpInitColor(color: #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))// slider *2
         doubleTapEvent(view: canvasView)
         self.textField.delegate = self
+        
+        let pan = UIPanGestureRecognizer(target: canvasView, action: #selector(canvasView.move))
+        canvasView.addGestureRecognizer(pan)
        
     }
    
@@ -89,6 +93,11 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         super.viewDidAppear(animated)
       
         
+    }
+    
+    //    MARK:- ViewTransition
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        canvasView.clearCanvasView()
     }
     
     //    MARK:- IBAction Gesture

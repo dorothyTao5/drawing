@@ -143,6 +143,65 @@ extension DrawingVC {
         
     }
     
+    /*
+    @objc func panRecognize(sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.canvasView)
+        let selectedLabel = sender.view!
+
+        selectedLabel.center = CGPoint(x: selectedLabel.center.x + translation.x,
+                                       y: selectedLabel.center.y + translation.y)
+        sender.setTranslation(CGPoint.zero, in: self.view)
+        
+        //限制移動區域
+      
+        let translation = sender.translation(in: self.canvasView)
+        let selectedLabel = sender.view!
+    
+        let x = selectedLabel.center.x + translation.x
+        let y = selectedLabel.center.y + translation.y
+        
+        let halfLbW = (selectedLabel.layer.frame.width - 90) / 2
+        let halfLbH = (selectedLabel.layer.frame.height - 50) / 2
+//        print("x== \(x);;; y== \(y)")
+        let halfImgvW : CGFloat = {
+            if self.isLandScape == false {
+                return portraitLcImgvW - halfLbW
+            }else {
+                return landscapeLcImgvW - halfLbW
+            }
+        }()
+
+        let halfImgvH  : CGFloat = {
+            if self.isLandScape == false {
+                return portLcImgvH - halfLbH
+            }else {
+                return landLcImgvH - halfLbH
+            }
+        }()
+        
+        
+        switch sender.state {
+        case .changed:
+            
+            if  x < halfLbW {
+                selectedLabel.center = CGPoint(x:  halfLbW, y: y)
+            }else if y < halfLbH {
+                selectedLabel.center = CGPoint(x: x, y: halfLbH)
+            }else if x > halfImgvW {
+                selectedLabel.center = CGPoint(x: halfImgvW, y: y)
+            }else if y > halfImgvH {
+                selectedLabel.center = CGPoint(x: x, y: halfImgvH)
+            }else {
+                selectedLabel.center = CGPoint(x: x, y: y)
+            }
+            
+            
+        default:
+            return
+        }
+        sender.setTranslation(CGPoint.zero, in: self.canvasView)
+ */
+    
     @objc func tapRecognize(sender:UITapGestureRecognizer) {
         HapticsUtil.feedbackMedium()
         

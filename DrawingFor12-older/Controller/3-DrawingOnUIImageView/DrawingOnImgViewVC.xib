@@ -11,8 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawingOnImgViewVC" customModule="DrawingFor12_older" customModuleProvider="target">
             <connections>
-                <outlet property="drawnImageView" destination="2Q3-fy-ylt" id="zm4-G8-Wc6"/>
-                <outlet property="savedImageView" destination="pyJ-eG-81Y" id="oYm-t3-h3t"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,27 +18,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Q3-fy-ylt">
-                    <rect key="frame" x="0.0" y="44" width="414" height="409"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyJ-eG-81Y">
-                    <rect key="frame" x="0.0" y="453" width="414" height="409"/>
-                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </imageView>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="2Q3-fy-ylt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DuO-YC-ApR"/>
-                <constraint firstItem="pyJ-eG-81Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I63-cs-yBe"/>
-                <constraint firstItem="2Q3-fy-ylt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Kjc-8x-fm0"/>
-                <constraint firstItem="2Q3-fy-ylt" firstAttribute="height" secondItem="pyJ-eG-81Y" secondAttribute="height" multiplier="1:1" id="S7q-6s-aqQ"/>
-                <constraint firstItem="2Q3-fy-ylt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aJB-Rj-ksd"/>
-                <constraint firstItem="pyJ-eG-81Y" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="cAK-9r-yJU"/>
-                <constraint firstItem="pyJ-eG-81Y" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="pGp-Hl-1nG"/>
-                <constraint firstItem="pyJ-eG-81Y" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="1:2" id="y4I-zM-20J"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
         </view>

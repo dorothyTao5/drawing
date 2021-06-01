@@ -330,7 +330,8 @@ class CustomSegment: UIView {
             let translation = sender.translation(in: self)
             ///get velocity in view
             let velocity = sender.velocity(in: self)
-            
+        let x = vOriginal.x + translation.x
+        
         switch isOnLeftSide {
         case true:  //left to right
            
@@ -339,17 +340,15 @@ class CustomSegment: UIView {
                 lbDownL.isHidden = true
                 
             } else if sender.state == UIGestureRecognizer.State.changed {
-                guard subView.center.x >  leftEdge.x else { return subView.center = leftEdge}
-                subView.center = CGPoint(x: vOriginal.x + translation.x, y: vOriginal.y)
-                /*
-                 保留滑動到中間的動畫程式
-                if subView.center.x > rightEdge.x {
                 
-                }else {
-                subView.center = CGPoint(x: vOriginal.x + translation.x, y: vOriginal.y)
+                guard velocity.x > 0 else {return}
                 
+                if x > rightEdge.x {
+                    subView.center = CGPoint(x: rightEdge.x, y: vOriginal.y)
+                } else if x > 0 {
+                    subView.center = CGPoint(x: x, y: vOriginal.y)
                 }
-                */
+                
                 print("is on right Side")
                 
             } else if sender.state == UIGestureRecognizer.State.ended {
@@ -370,8 +369,16 @@ class CustomSegment: UIView {
                 lbDownR.isHidden = true
                 
             } else if sender.state == UIGestureRecognizer.State.changed {
-                guard subView.center.x > rightEdge.x else { return subView.center = rightEdge}
-                subView.center = CGPoint(x: vOriginal.x + translation.x, y: vOriginal.y)
+//                guard subView.center.x > rightEdge.x else { return subView.center = rightEdge}
+//                subView.center = CGPoint(x: vOriginal.x + translation.x, y: vOriginal.y)
+                guard velocity.x < 0 else {return}
+                
+                if x < leftEdge.x {
+                    subView.center = CGPoint(x: leftEdge.x, y: vOriginal.y)
+                } else if x < rightEdge.x {
+                    subView.center = CGPoint(x: x, y: vOriginal.y)
+                }
+                
                 print("is on left Side")
                 
             } else if sender.state == UIGestureRecognizer.State.ended {

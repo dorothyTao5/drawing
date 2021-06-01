@@ -43,6 +43,10 @@
 		B88DA276262BE6B100C0B37E /* XibViewForCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88DA274262BE6B100C0B37E /* XibViewForCell.xib */; };
 		B88DA277262BE6B100C0B37E /* XibViewForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88DA275262BE6B100C0B37E /* XibViewForCell.swift */; };
 		B88DA27F262C03E800C0B37E /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88DA27E262C03E800C0B37E /* CustomSegment.swift */; };
+		B8E082F226311FD4003BC566 /* DrawOnImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E082F026311FD4003BC566 /* DrawOnImgVC.swift */; };
+		B8E082F326311FD4003BC566 /* DrawOnImgVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E082F126311FD4003BC566 /* DrawOnImgVC.xib */; };
+		B8E082F82631205F003BC566 /* PickColorCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E082F62631205F003BC566 /* PickColorCVCell.swift */; };
+		B8E082F92631205F003BC566 /* PickColorCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E082F72631205F003BC566 /* PickColorCVCell.xib */; };
 		B8F03EF626291E7F00783A5A /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F03EF426291E7F00783A5A /* HomePageVC.swift */; };
 		B8F03EFE262921B000783A5A /* CustomSegmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F03EFC262921B000783A5A /* CustomSegmentVC.swift */; };
 		B8F03EFF262921B000783A5A /* CustomSegmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F03EFD262921B000783A5A /* CustomSegmentVC.xib */; };
@@ -87,6 +91,10 @@
 		B88DA274262BE6B100C0B37E /* XibViewForCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibViewForCell.xib; sourceTree = "<group>"; };
 		B88DA275262BE6B100C0B37E /* XibViewForCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewForCell.swift; sourceTree = "<group>"; };
 		B88DA27E262C03E800C0B37E /* CustomSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
+		B8E082F026311FD4003BC566 /* DrawOnImgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOnImgVC.swift; sourceTree = "<group>"; };
+		B8E082F126311FD4003BC566 /* DrawOnImgVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawOnImgVC.xib; sourceTree = "<group>"; };
+		B8E082F62631205F003BC566 /* PickColorCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickColorCVCell.swift; sourceTree = "<group>"; };
+		B8E082F72631205F003BC566 /* PickColorCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickColorCVCell.xib; sourceTree = "<group>"; };
 		B8F03EF426291E7F00783A5A /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
 		B8F03EFC262921B000783A5A /* CustomSegmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentVC.swift; sourceTree = "<group>"; };
 		B8F03EFD262921B000783A5A /* CustomSegmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSegmentVC.xib; sourceTree = "<group>"; };
@@ -138,9 +146,12 @@
 		B84868FE262D6E9F00C95435 /* 3-DrawingOnUIImageView */ = {
 			isa = PBXGroup;
 			children = (
+				B8E082F52631205F003BC566 /* CVCell */,
 				B8486905262D6F2F00C95435 /* DrawnImageView.swift */,
 				B84868FF262D6F0E00C95435 /* DrawingOnImgViewVC.swift */,
 				B8486900262D6F0E00C95435 /* DrawingOnImgViewVC.xib */,
+				B8E082F026311FD4003BC566 /* DrawOnImgVC.swift */,
+				B8E082F126311FD4003BC566 /* DrawOnImgVC.xib */,
 			);
 			path = "3-DrawingOnUIImageView";
 			sourceTree = "<group>";
@@ -273,6 +284,15 @@
 			path = XibView;
 			sourceTree = "<group>";
 		};
+		B8E082F52631205F003BC566 /* CVCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8E082F62631205F003BC566 /* PickColorCVCell.swift */,
+				B8E082F72631205F003BC566 /* PickColorCVCell.xib */,
+			);
+			path = CVCell;
+			sourceTree = "<group>";
+		};
 		B8F03EF926291E9300783A5A /* 0-DrawingVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,10 +372,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B872AC2E26203C930096ACD3 /* Main.storyboard in Resources */,
+				B8E082F92631205F003BC566 /* PickColorCVCell.xib in Resources */,
 				B8486902262D6F0E00C95435 /* DrawingOnImgViewVC.xib in Resources */,
 				B88DA271262BE67000C0B37E /* SectionTVCell.xib in Resources */,
 				B81070B225A7E9160085983E /* LaunchScreen.storyboard in Resources */,
 				B88DA276262BE6B100C0B37E /* XibViewForCell.xib in Resources */,
+				B8E082F326311FD4003BC566 /* DrawOnImgVC.xib in Resources */,
 				B81070AF25A7E9160085983E /* Assets.xcassets in Resources */,
 				B8867AE526247B2200B14462 /* EditTextVC.xib in Resources */,
 				B8F03EFF262921B000783A5A /* CustomSegmentVC.xib in Resources */,
@@ -382,6 +404,8 @@
 				B81070C325A7EF5A0085983E /* PreviewImgVC.swift in Sources */,
 				B81070AA25A7E9150085983E /* DrawingVC.swift in Sources */,
 				B8486906262D6F2F00C95435 /* DrawnImageView.swift in Sources */,
+				B8E082F82631205F003BC566 /* PickColorCVCell.swift in Sources */,
+				B8E082F226311FD4003BC566 /* DrawOnImgVC.swift in Sources */,
 				B8486943262FB6E400C95435 /* BlueTheme.swift in Sources */,
 				B81070A625A7E9150085983E /* AppDelegate.swift in Sources */,
 				B81070BB25A7E9560085983E /* CanvasView.swift in Sources */,

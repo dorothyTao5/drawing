@@ -53,7 +53,8 @@ extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
            
             navigationController?.pushViewController(vc, animated: true)
         case 3:
-            let vc = DrawingOnImgViewVC()
+//            let vc = DrawingOnImgViewVC()
+            let vc = DrawOnImgVC()
             navigationController?.pushViewController(vc, animated: true)
             
             

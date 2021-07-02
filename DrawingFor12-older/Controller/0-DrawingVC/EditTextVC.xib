@@ -88,24 +88,33 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IEN-hu-Gla">
-                    <rect key="frame" x="191" y="431" width="32" height="34"/>
+                    <rect key="frame" x="160" y="431" width="94" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="94" id="V7j-VH-vzv"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入您想添加的文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccE-ZH-feD">
+                    <rect key="frame" x="120" y="374" width="174" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.99263352159999996" green="0.93070523717263143" blue="0.8890533655426095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mHs-Yw-j8f" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3bb-Hp-X5r"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IEN-hu-Gla" secondAttribute="trailing" constant="20" id="4xQ-db-9Jm"/>
                 <constraint firstItem="wPw-Cr-imj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Bal-ME-593"/>
                 <constraint firstItem="wPw-Cr-imj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ivo-TP-aY1"/>
+                <constraint firstItem="ccE-ZH-feD" firstAttribute="centerX" secondItem="IEN-hu-Gla" secondAttribute="centerX" id="KL5-M3-7w2"/>
                 <constraint firstItem="mHs-Yw-j8f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="P5B-Yi-nbN"/>
                 <constraint firstItem="wPw-Cr-imj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pls-DY-mq4"/>
                 <constraint firstItem="mHs-Yw-j8f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QvY-Zq-JY3"/>
                 <constraint firstItem="IEN-hu-Gla" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aua-66-eXh"/>
                 <constraint firstItem="wPw-Cr-imj" firstAttribute="bottom" secondItem="mHs-Yw-j8f" secondAttribute="bottom" id="cwT-Q3-esZ"/>
-                <constraint firstItem="IEN-hu-Gla" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="h51-ga-hmb"/>
+                <constraint firstItem="IEN-hu-Gla" firstAttribute="top" secondItem="ccE-ZH-feD" secondAttribute="bottom" constant="36" id="lGx-h5-Eae"/>
                 <constraint firstItem="IEN-hu-Gla" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="unY-rV-5lb"/>
             </constraints>
             <point key="canvasLocation" x="28.985507246376812" y="96.428571428571431"/>

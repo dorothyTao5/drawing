@@ -1,10 +1,4 @@
-//
-//  CustomSliderModule.swift
-//  Qpesums
-//
-//  Created by dorothyLiu on 2021/4/7.
-//  Copyright © 2021 IISI. All rights reserved.
-//
+
 
 import Foundation
 import UIKit

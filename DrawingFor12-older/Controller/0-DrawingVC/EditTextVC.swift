@@ -20,6 +20,7 @@ class EditTextVC: UIViewController {
     var delegate : EditTextVCDelegate!
     var str = ""
     var tagLabel = 0
+    
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {

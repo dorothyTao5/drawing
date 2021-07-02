@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  DrawingFor12-older
 //
-//  Created by 2010011NB01 on 2021/1/8.
+//  Created by dorothy on 2021/1/8.
 //
 //youtube link: https://www.youtube.com/watch?v=kAiknPhkWmc
 //source code： https://github.com/1992Shubham/DrawingApp
@@ -46,19 +46,20 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     
     ///hexView右下角Hex按鈕
     ///一進畫面定位viewHexColor 最高 最低 定位位置
-    var hexViewUp: CGPoint! = CGPoint(x: 228.0 ,y: 616.5 )
-    var hexViewDown: CGPoint!  = CGPoint(x: 228.0 ,y: 700.5 )
-    var trayOriginalCenter: CGPoint! = CGPoint(x: 228.0 ,y: 616.5 )
-    var movedPosition :CGPoint!
+//    var hexViewUp: CGPoint! = CGPoint(x: 228.0 ,y: 616.5 )
+//    var hexViewDown: CGPoint!  = CGPoint(x: 228.0 ,y: 700.5 )
+//    var trayOriginalCenter: CGPoint! = CGPoint(x: 228.0 ,y: 616.5 )
+//    var movedPosition :CGPoint!
     
     ///text Label 相關
     var orderLb = 0
     var dicLabel : [Int : [Any]] = [:]
-    var editModeOn = false
     
     
-    var arrColors: [UIColor] = [#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1), #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1), #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1), #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1), #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
-    var currentColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    // Models
+    var colorModel = ColorModel()
+    var hexModel = HexModel()
+    
     
     ///originalFrame：不遮擋輸入框 紀錄輸入框原本位置
     var originalFrame : CGRect?
@@ -70,7 +71,9 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         
         setUpViewHexColorBG()
-        setUpInitColor(color: #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1))// slider *2
+        
+        colorModel.setUpInitColor(color:  #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1), firstSlider: widthSlider, secondSlider: opacitySlider, canvasView: canvasView)
+        
         doubleTapEvent(view: canvasView)
         self.textField.delegate = self
         
@@ -84,6 +87,7 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(notification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
@@ -92,7 +96,6 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
       
-        
     }
     
     //    MARK:- ViewTransition
@@ -105,11 +108,11 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     @IBAction func didPanTray(_ sender: UIPanGestureRecognizer) {
         GesturesAnimationUtil.upAndDown(sender,
                                 in: view,
-                                trayOriginalCenter: &trayOriginalCenter,
+                                trayOriginalCenter: &hexModel.trayOriginalCenter,
                                 viewBG: viewHexColorBG,
                                 targetBtn: btnHex,
-                                trayUp: hexViewUp,
-                                trayDown: hexViewDown)
+                                trayUp: hexModel.hexViewUp,
+                                trayDown: hexModel.hexViewDown)
     }
  
   
@@ -180,15 +183,15 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         if sender.tag == 0 {
             sender.tag = 1
             self.viewHexColorBG.isHidden = false
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                self.viewHexColorBG.center = self.hexViewUp
+            UIView.animate(withDuration: 0.3, animations: {[self] () -> Void in
+                self.viewHexColorBG.center = hexModel.hexViewUp
            })
             
         }else {
             sender.tag = 0
             
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                self.viewHexColorBG.center = self.hexViewDown
+            UIView.animate(withDuration: 0.3, animations: { [self] () -> Void in
+                self.viewHexColorBG.center = hexModel.hexViewDown
            })
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.viewHexColorBG.isHidden = true
@@ -205,7 +208,7 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     
     @IBAction func onClickOpacity(_ sender: UISlider) {
         canvasView.strokeOpacity = CGFloat(sender.value)
-        opacitySlider.tintColor = currentColor.withAlphaComponent(CGFloat( opacitySlider.value))
+        opacitySlider.tintColor = colorModel.currentColor.withAlphaComponent(CGFloat( opacitySlider.value))
     }
     
     
@@ -226,8 +229,8 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
     @objc func doneButtonTappedForMyNumericTextField() {
         if let str = textField.text, str.count == 6 {
             let colorStr = "#" + (self.textField.text ?? "FFFFFF")
-            currentColor = hexStringToUIColor(hex: colorStr)
-            canvasView.strokeColor = currentColor
+            colorModel.currentColor = hexStringToUIColor(hex: colorStr)
+            canvasView.strokeColor = colorModel.currentColor
             hideHexView()
         }else {
             AlertViewUtil.show(vc: self, message: "請確認是否為6位字元或按Cancel離開")
@@ -271,7 +274,7 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         )
     }
     
-    //MARK: - *functions
+    //MARK: - *functions-HexView
     func hideHexView(){
         btnHex.tag = 0
         viewHexColorBG.isHidden = true
@@ -281,13 +284,7 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
         viewHexColorBG.layer.cornerRadius = 9
         viewHexColorBG.isHidden = true
     }
-    
-    func setUpInitColor(color: UIColor) {
-        currentColor = color
-        widthSlider.tintColor = currentColor
-        opacitySlider.tintColor = currentColor.withAlphaComponent(CGFloat( opacitySlider.value))
-        canvasView.strokeColor = currentColor
-    }
+   
     
 
     //MARK: - * keyboard @objc func
@@ -323,21 +320,25 @@ class DrawingVC: UIViewController, UITextFieldDelegate{
 //MARK:- *extension CollectionView
 extension DrawingVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrColors.count
+        return colorModel.arrColors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         if let view = cell.viewWithTag(111) {
             view.layer.cornerRadius = 3
-            view.backgroundColor = arrColors[indexPath.row]
+            view.backgroundColor = colorModel.arrColors[indexPath.row]
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         HapticsUtil.feedbackMedium()
-        setUpInitColor(color: arrColors[indexPath.row])
+        colorModel.setUpInitColor(color: colorModel.arrColors[indexPath.row],
+                                  firstSlider: widthSlider,
+                                  secondSlider: opacitySlider,
+                                  canvasView: canvasView)
+
     }
     
 }

@@ -30,7 +30,7 @@ extension DrawingVC {
         label.text = str
         label.font = label.font.withSize(30)
         label.tag = orderLb
-        label.textColor = currentColor.withAlphaComponent(CGFloat( opacitySlider.value))
+        label.textColor = colorModel.currentColor.withAlphaComponent(CGFloat( opacitySlider.value))
         
         let deleIV = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         deleIV.isUserInteractionEnabled = true
@@ -115,7 +115,7 @@ extension DrawingVC {
             animation.toValue = NSValue(cgPoint: CGPoint(x: lbTxt.center.x + 10, y: lbTxt.center.y))
 
             lbTxt.layer.add(animation, forKey: "position")
-            editModeOn = true
+//            editModeOn = true
         }
         
     }

@@ -3,14 +3,14 @@
 //  DrawingFor12-older
 //
 //  Created by dorothyLiu on 2021/4/10.
-//
+//https://stackoverflow.com/questions/24263007/how-to-use-hex-color-values?page=1&tab=votes#tab-top
 
 import Foundation
 import UIKit
 
 //MARK:- extension UIColor
 extension UIColor {
-    //https://stackoverflow.com/questions/24263007/how-to-use-hex-color-values?page=1&tab=votes#tab-top
+   
    convenience init(red: Int, green: Int, blue: Int) {
        assert(red >= 0 && red <= 255, "Invalid red component")
        assert(green >= 0 && green <= 255, "Invalid green component")

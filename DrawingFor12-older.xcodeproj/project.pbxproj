@@ -13,6 +13,9 @@
 		B81070B225A7E9160085983E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B81070B025A7E9160085983E /* LaunchScreen.storyboard */; };
 		B81070BB25A7E9560085983E /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81070BA25A7E9560085983E /* CanvasView.swift */; };
 		B81070C325A7EF5A0085983E /* PreviewImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81070C225A7EF5A0085983E /* PreviewImgVC.swift */; };
+		B8379A072674E2670042D18D /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8379A052674E2670042D18D /* ProgressVC.swift */; };
+		B8379A082674E2670042D18D /* ProgressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8379A062674E2670042D18D /* ProgressVC.xib */; };
+		B8379A0E267DD3430042D18D /* WarningVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8379A0D267DD3430042D18D /* WarningVCModel.swift */; };
 		B8486901262D6F0E00C95435 /* DrawingOnImgViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84868FF262D6F0E00C95435 /* DrawingOnImgViewVC.swift */; };
 		B8486902262D6F0E00C95435 /* DrawingOnImgViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8486900262D6F0E00C95435 /* DrawingOnImgViewVC.xib */; };
 		B8486906262D6F2F00C95435 /* DrawnImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8486905262D6F2F00C95435 /* DrawnImageView.swift */; };
@@ -20,6 +23,8 @@
 		B8486944262FB6E400C95435 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8486940262FB6E400C95435 /* ThemeProtocol.swift */; };
 		B8486945262FB6E400C95435 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8486941262FB6E400C95435 /* Theme.swift */; };
 		B8486946262FB6E400C95435 /* RedTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8486942262FB6E400C95435 /* RedTheme.swift */; };
+		B84A0D282672110F00F038F1 /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84A0D272672110F00F038F1 /* HomePageModel.swift */; };
+		B84A0D2D2672194600F038F1 /* DrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84A0D2C2672194600F038F1 /* DrawingModel.swift */; };
 		B872AC18261F3E7F0096ACD3 /* HapticsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC17261F3E7F0096ACD3 /* HapticsUtil.swift */; };
 		B872AC1D261F44300096ACD3 /* CustomSliderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC1C261F44300096ACD3 /* CustomSliderManager.swift */; };
 		B872AC2A26203C150096ACD3 /* CustomLabelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B872AC2926203C150096ACD3 /* CustomLabelManager.swift */; };
@@ -43,6 +48,10 @@
 		B88DA276262BE6B100C0B37E /* XibViewForCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88DA274262BE6B100C0B37E /* XibViewForCell.xib */; };
 		B88DA277262BE6B100C0B37E /* XibViewForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88DA275262BE6B100C0B37E /* XibViewForCell.swift */; };
 		B88DA27F262C03E800C0B37E /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88DA27E262C03E800C0B37E /* CustomSegment.swift */; };
+		B89A22172687EFA200123B2F /* ComingFromUpRightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89A22152687EFA200123B2F /* ComingFromUpRightVC.swift */; };
+		B89A22182687EFA200123B2F /* ComingFromUpRightVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89A22162687EFA200123B2F /* ComingFromUpRightVC.xib */; };
+		B89A221C26882B5500123B2F /* InfoDescripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89A221A26882B5500123B2F /* InfoDescripView.swift */; };
+		B89A221D26882B5500123B2F /* InfoDescripView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89A221B26882B5500123B2F /* InfoDescripView.xib */; };
 		B8E082F226311FD4003BC566 /* DrawOnImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E082F026311FD4003BC566 /* DrawOnImgVC.swift */; };
 		B8E082F326311FD4003BC566 /* DrawOnImgVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E082F126311FD4003BC566 /* DrawOnImgVC.xib */; };
 		B8E082F82631205F003BC566 /* PickColorCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E082F62631205F003BC566 /* PickColorCVCell.swift */; };
@@ -61,6 +70,9 @@
 		B81070B325A7E9160085983E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B81070BA25A7E9560085983E /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		B81070C225A7EF5A0085983E /* PreviewImgVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImgVC.swift; sourceTree = "<group>"; };
+		B8379A052674E2670042D18D /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC.swift; sourceTree = "<group>"; };
+		B8379A062674E2670042D18D /* ProgressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressVC.xib; sourceTree = "<group>"; };
+		B8379A0D267DD3430042D18D /* WarningVCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningVCModel.swift; sourceTree = "<group>"; };
 		B84868FF262D6F0E00C95435 /* DrawingOnImgViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingOnImgViewVC.swift; sourceTree = "<group>"; };
 		B8486900262D6F0E00C95435 /* DrawingOnImgViewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawingOnImgViewVC.xib; sourceTree = "<group>"; };
 		B8486905262D6F2F00C95435 /* DrawnImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawnImageView.swift; sourceTree = "<group>"; };
@@ -68,6 +80,8 @@
 		B8486940262FB6E400C95435 /* ThemeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
 		B8486941262FB6E400C95435 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		B8486942262FB6E400C95435 /* RedTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedTheme.swift; sourceTree = "<group>"; };
+		B84A0D272672110F00F038F1 /* HomePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModel.swift; sourceTree = "<group>"; };
+		B84A0D2C2672194600F038F1 /* DrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingModel.swift; sourceTree = "<group>"; };
 		B872AC17261F3E7F0096ACD3 /* HapticsUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsUtil.swift; sourceTree = "<group>"; };
 		B872AC1C261F44300096ACD3 /* CustomSliderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSliderManager.swift; sourceTree = "<group>"; };
 		B872AC2926203C150096ACD3 /* CustomLabelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabelManager.swift; sourceTree = "<group>"; };
@@ -91,6 +105,10 @@
 		B88DA274262BE6B100C0B37E /* XibViewForCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibViewForCell.xib; sourceTree = "<group>"; };
 		B88DA275262BE6B100C0B37E /* XibViewForCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibViewForCell.swift; sourceTree = "<group>"; };
 		B88DA27E262C03E800C0B37E /* CustomSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
+		B89A22152687EFA200123B2F /* ComingFromUpRightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingFromUpRightVC.swift; sourceTree = "<group>"; };
+		B89A22162687EFA200123B2F /* ComingFromUpRightVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComingFromUpRightVC.xib; sourceTree = "<group>"; };
+		B89A221A26882B5500123B2F /* InfoDescripView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDescripView.swift; sourceTree = "<group>"; };
+		B89A221B26882B5500123B2F /* InfoDescripView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoDescripView.xib; sourceTree = "<group>"; };
 		B8E082F026311FD4003BC566 /* DrawOnImgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOnImgVC.swift; sourceTree = "<group>"; };
 		B8E082F126311FD4003BC566 /* DrawOnImgVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawOnImgVC.xib; sourceTree = "<group>"; };
 		B8E082F62631205F003BC566 /* PickColorCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickColorCVCell.swift; sourceTree = "<group>"; };
@@ -131,16 +149,26 @@
 			isa = PBXGroup;
 			children = (
 				B81070A525A7E9150085983E /* AppDelegate.swift */,
-				B883D71E25B81C2600751A63 /* Module */,
+				B84A0D26267210F100F038F1 /* Model */,
 				B872AC3126203D280096ACD3 /* View */,
 				B872AC3226203DD20096ACD3 /* Controller */,
 				B81070B325A7E9160085983E /* Info.plist */,
 				B87ED3EE25B912B100CF3EA9 /* Explanation */,
 				B872AC44262140650096ACD3 /* Extention */,
+				B883D71E25B81C2600751A63 /* Module */,
 				B872AC3026203CCA0096ACD3 /* IBInspectableModule */,
 				B872AC43262140510096ACD3 /* Utils */,
 			);
 			path = "DrawingFor12-older";
+			sourceTree = "<group>";
+		};
+		B8379A042674E2170042D18D /* 4-ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				B8379A052674E2670042D18D /* ProgressVC.swift */,
+				B8379A062674E2670042D18D /* ProgressVC.xib */,
+			);
+			path = "4-ProgressView";
 			sourceTree = "<group>";
 		};
 		B84868FE262D6E9F00C95435 /* 3-DrawingOnUIImageView */ = {
@@ -175,6 +203,16 @@
 			path = ThemeManager;
 			sourceTree = "<group>";
 		};
+		B84A0D26267210F100F038F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8379A0D267DD3430042D18D /* WarningVCModel.swift */,
+				B84A0D272672110F00F038F1 /* HomePageModel.swift */,
+				B84A0D2C2672194600F038F1 /* DrawingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B872AC3026203CCA0096ACD3 /* IBInspectableModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +241,8 @@
 				B8F03EFB2629218900783A5A /* 1-CustomSegmentController */,
 				B88DA269262BE65300C0B37E /* 2-SettingVC */,
 				B84868FE262D6E9F00C95435 /* 3-DrawingOnUIImageView */,
-				B848693D262FB6D000C95435 /* 4-ChangeTheme */,
+				B8379A042674E2170042D18D /* 4-ProgressView */,
+				B89A22102687EF2100123B2F /* 5-ComingFromUpRight */,
 				B88DA268262BE63800C0B37E /* WorkingOn */,
 			);
 			path = Controller;
@@ -252,6 +291,7 @@
 		B88DA268262BE63800C0B37E /* WorkingOn */ = {
 			isa = PBXGroup;
 			children = (
+				B848693D262FB6D000C95435 /* 4-ChangeTheme */,
 			);
 			path = WorkingOn;
 			sourceTree = "<group>";
@@ -282,6 +322,17 @@
 				B88DA275262BE6B100C0B37E /* XibViewForCell.swift */,
 			);
 			path = XibView;
+			sourceTree = "<group>";
+		};
+		B89A22102687EF2100123B2F /* 5-ComingFromUpRight */ = {
+			isa = PBXGroup;
+			children = (
+				B89A221A26882B5500123B2F /* InfoDescripView.swift */,
+				B89A221B26882B5500123B2F /* InfoDescripView.xib */,
+				B89A22152687EFA200123B2F /* ComingFromUpRightVC.swift */,
+				B89A22162687EFA200123B2F /* ComingFromUpRightVC.xib */,
+			);
+			path = "5-ComingFromUpRight";
 			sourceTree = "<group>";
 		};
 		B8E082F52631205F003BC566 /* CVCell */ = {
@@ -372,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B872AC2E26203C930096ACD3 /* Main.storyboard in Resources */,
+				B8379A082674E2670042D18D /* ProgressVC.xib in Resources */,
 				B8E082F92631205F003BC566 /* PickColorCVCell.xib in Resources */,
 				B8486902262D6F0E00C95435 /* DrawingOnImgViewVC.xib in Resources */,
 				B88DA271262BE67000C0B37E /* SectionTVCell.xib in Resources */,
@@ -379,7 +431,9 @@
 				B88DA276262BE6B100C0B37E /* XibViewForCell.xib in Resources */,
 				B8E082F326311FD4003BC566 /* DrawOnImgVC.xib in Resources */,
 				B81070AF25A7E9160085983E /* Assets.xcassets in Resources */,
+				B89A22182687EFA200123B2F /* ComingFromUpRightVC.xib in Resources */,
 				B8867AE526247B2200B14462 /* EditTextVC.xib in Resources */,
+				B89A221D26882B5500123B2F /* InfoDescripView.xib in Resources */,
 				B8F03EFF262921B000783A5A /* CustomSegmentVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,14 +458,18 @@
 				B81070C325A7EF5A0085983E /* PreviewImgVC.swift in Sources */,
 				B81070AA25A7E9150085983E /* DrawingVC.swift in Sources */,
 				B8486906262D6F2F00C95435 /* DrawnImageView.swift in Sources */,
+				B8379A072674E2670042D18D /* ProgressVC.swift in Sources */,
 				B8E082F82631205F003BC566 /* PickColorCVCell.swift in Sources */,
 				B8E082F226311FD4003BC566 /* DrawOnImgVC.swift in Sources */,
+				B89A22172687EFA200123B2F /* ComingFromUpRightVC.swift in Sources */,
 				B8486943262FB6E400C95435 /* BlueTheme.swift in Sources */,
 				B81070A625A7E9150085983E /* AppDelegate.swift in Sources */,
 				B81070BB25A7E9560085983E /* CanvasView.swift in Sources */,
 				B8F03EF626291E7F00783A5A /* HomePageVC.swift in Sources */,
 				B87ED3FD25B966EA00CF3EA9 /* PrintInfoUtil.swift in Sources */,
 				B872AC4D262141130096ACD3 /* UITextFieldExtension.swift in Sources */,
+				B84A0D282672110F00F038F1 /* HomePageModel.swift in Sources */,
+				B89A221C26882B5500123B2F /* InfoDescripView.swift in Sources */,
 				B8867ACB2621547400B14462 /* ImageUtil.swift in Sources */,
 				B8486944262FB6E400C95435 /* ThemeProtocol.swift in Sources */,
 				B8867AE026247A5500B14462 /* EditTextVC.swift in Sources */,
@@ -419,7 +477,9 @@
 				B872AC18261F3E7F0096ACD3 /* HapticsUtil.swift in Sources */,
 				B8486901262D6F0E00C95435 /* DrawingOnImgViewVC.swift in Sources */,
 				B87A7099262541FF00FB1707 /* DrawingExtensionGesture.swift in Sources */,
+				B8379A0E267DD3430042D18D /* WarningVCModel.swift in Sources */,
 				B872AC1D261F44300096ACD3 /* CustomSliderManager.swift in Sources */,
+				B84A0D2D2672194600F038F1 /* DrawingModel.swift in Sources */,
 				B8486945262FB6E400C95435 /* Theme.swift in Sources */,
 				B8486946262FB6E400C95435 /* RedTheme.swift in Sources */,
 				B87ED40025B9800000CF3EA9 /* UIViewExtension.swift in Sources */,
@@ -569,7 +629,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dorothy.DrawingFor12-older";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dorothy.DrawingFor12-older.test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,7 +648,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dorothy.DrawingFor12-older";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dorothy.DrawingFor12-older.test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

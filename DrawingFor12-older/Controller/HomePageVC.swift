@@ -11,10 +11,7 @@ class HomePageVC: UIViewController {
 
     @IBOutlet weak var tbv: UITableView!
     
-    var arr = ["繪圖",
-               "客製化SegmentController",
-               "section 不可交叉移動",
-               "DrawingOnUIImageView"]
+    let hPModel = HomePageModel()
     
     
     override func viewDidLoad() {
@@ -27,12 +24,12 @@ class HomePageVC: UIViewController {
 
 extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return hPModel.arrData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier : "Cell")!
-        cell.textLabel?.text = arr[indexPath.row]
+        cell.textLabel?.text = hPModel.arrData[indexPath.row]
         return cell
     }
     
@@ -42,24 +39,29 @@ extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
         
         case 0:
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "DrawingVC") as! DrawingVC
-           
             navigationController?.pushViewController(vc, animated: true)
+            
         case 1 :
             let vc = CustomSegmentVC()
             navigationController?.pushViewController(vc, animated: true)
-//            self.present(vc, animated: true, completion: nil)
+
         case 2:
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
-           
             navigationController?.pushViewController(vc, animated: true)
+            
         case 3:
-//            let vc = DrawingOnImgViewVC()
             let vc = DrawOnImgVC()
             navigationController?.pushViewController(vc, animated: true)
             
+        case 4:
+            let vc = ProgressVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case 5:
+            let vc = ComingFromUpRightVC()
+            navigationController?.pushViewController(vc, animated: true)
             
         default:
-            print("HomePageVC tbv error" )
+            print("HomePageVC tbv error- did not add new vc" )
         }
         
     }

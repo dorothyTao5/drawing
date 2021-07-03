@@ -12,7 +12,7 @@ class HomePageVC: UIViewController {
     @IBOutlet weak var tbv: UITableView!
     
     let hPModel = HomePageModel()
-    
+    let openCloseTbvModel = OpenCloseTbvModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,10 @@ extension HomePageVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
         case 5:
             let vc = ComingFromUpRightVC()
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case 6:
+            let vc = OpenCloseTbvVC()
             navigationController?.pushViewController(vc, animated: true)
             
         default:

@@ -56,9 +56,16 @@
 		B8E082F326311FD4003BC566 /* DrawOnImgVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E082F126311FD4003BC566 /* DrawOnImgVC.xib */; };
 		B8E082F82631205F003BC566 /* PickColorCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E082F62631205F003BC566 /* PickColorCVCell.swift */; };
 		B8E082F92631205F003BC566 /* PickColorCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E082F72631205F003BC566 /* PickColorCVCell.xib */; };
+		B8E379DD268EFCBF006FAE19 /* OpenCloseTbvVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E379DB268EFCBF006FAE19 /* OpenCloseTbvVC.swift */; };
+		B8E379DE268EFCBF006FAE19 /* OpenCloseTbvVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E379DC268EFCBF006FAE19 /* OpenCloseTbvVC.xib */; };
+		B8E379E0268EFCD3006FAE19 /* OpenCloseTbvModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E379DF268EFCD3006FAE19 /* OpenCloseTbvModel.swift */; };
+		B8E379E4268F054F006FAE19 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E379E2268F054F006FAE19 /* TableViewCell.swift */; };
+		B8E379E5268F054F006FAE19 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8E379E3268F054F006FAE19 /* TableViewCell.xib */; };
 		B8F03EF626291E7F00783A5A /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F03EF426291E7F00783A5A /* HomePageVC.swift */; };
 		B8F03EFE262921B000783A5A /* CustomSegmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F03EFC262921B000783A5A /* CustomSegmentVC.swift */; };
 		B8F03EFF262921B000783A5A /* CustomSegmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F03EFD262921B000783A5A /* CustomSegmentVC.xib */; };
+		B8F60477268F38A400F720C2 /* tbvHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F60475268F38A400F720C2 /* tbvHeaderView.swift */; };
+		B8F60478268F38A400F720C2 /* tbvHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F60476268F38A400F720C2 /* tbvHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,9 +120,16 @@
 		B8E082F126311FD4003BC566 /* DrawOnImgVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawOnImgVC.xib; sourceTree = "<group>"; };
 		B8E082F62631205F003BC566 /* PickColorCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickColorCVCell.swift; sourceTree = "<group>"; };
 		B8E082F72631205F003BC566 /* PickColorCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickColorCVCell.xib; sourceTree = "<group>"; };
+		B8E379DB268EFCBF006FAE19 /* OpenCloseTbvVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCloseTbvVC.swift; sourceTree = "<group>"; };
+		B8E379DC268EFCBF006FAE19 /* OpenCloseTbvVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenCloseTbvVC.xib; sourceTree = "<group>"; };
+		B8E379DF268EFCD3006FAE19 /* OpenCloseTbvModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCloseTbvModel.swift; sourceTree = "<group>"; };
+		B8E379E2268F054F006FAE19 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		B8E379E3268F054F006FAE19 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		B8F03EF426291E7F00783A5A /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
 		B8F03EFC262921B000783A5A /* CustomSegmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentVC.swift; sourceTree = "<group>"; };
 		B8F03EFD262921B000783A5A /* CustomSegmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSegmentVC.xib; sourceTree = "<group>"; };
+		B8F60475268F38A400F720C2 /* tbvHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tbvHeaderView.swift; sourceTree = "<group>"; };
+		B8F60476268F38A400F720C2 /* tbvHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tbvHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +223,7 @@
 				B8379A0D267DD3430042D18D /* WarningVCModel.swift */,
 				B84A0D272672110F00F038F1 /* HomePageModel.swift */,
 				B84A0D2C2672194600F038F1 /* DrawingModel.swift */,
+				B8E379DF268EFCD3006FAE19 /* OpenCloseTbvModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +258,7 @@
 				B84868FE262D6E9F00C95435 /* 3-DrawingOnUIImageView */,
 				B8379A042674E2170042D18D /* 4-ProgressView */,
 				B89A22102687EF2100123B2F /* 5-ComingFromUpRight */,
+				B8E379DA268EFC2E006FAE19 /* 6-OpenCloseTbv */,
 				B88DA268262BE63800C0B37E /* WorkingOn */,
 			);
 			path = Controller;
@@ -344,6 +360,27 @@
 			path = CVCell;
 			sourceTree = "<group>";
 		};
+		B8E379DA268EFC2E006FAE19 /* 6-OpenCloseTbv */ = {
+			isa = PBXGroup;
+			children = (
+				B8E379E1268F0535006FAE19 /* tbvCell */,
+				B8E379DB268EFCBF006FAE19 /* OpenCloseTbvVC.swift */,
+				B8E379DC268EFCBF006FAE19 /* OpenCloseTbvVC.xib */,
+			);
+			path = "6-OpenCloseTbv";
+			sourceTree = "<group>";
+		};
+		B8E379E1268F0535006FAE19 /* tbvCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8F60475268F38A400F720C2 /* tbvHeaderView.swift */,
+				B8F60476268F38A400F720C2 /* tbvHeaderView.xib */,
+				B8E379E2268F054F006FAE19 /* TableViewCell.swift */,
+				B8E379E3268F054F006FAE19 /* TableViewCell.xib */,
+			);
+			path = tbvCell;
+			sourceTree = "<group>";
+		};
 		B8F03EF926291E9300783A5A /* 0-DrawingVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,13 +460,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B872AC2E26203C930096ACD3 /* Main.storyboard in Resources */,
+				B8E379E5268F054F006FAE19 /* TableViewCell.xib in Resources */,
 				B8379A082674E2670042D18D /* ProgressVC.xib in Resources */,
 				B8E082F92631205F003BC566 /* PickColorCVCell.xib in Resources */,
+				B8F60478268F38A400F720C2 /* tbvHeaderView.xib in Resources */,
 				B8486902262D6F0E00C95435 /* DrawingOnImgViewVC.xib in Resources */,
 				B88DA271262BE67000C0B37E /* SectionTVCell.xib in Resources */,
 				B81070B225A7E9160085983E /* LaunchScreen.storyboard in Resources */,
 				B88DA276262BE6B100C0B37E /* XibViewForCell.xib in Resources */,
 				B8E082F326311FD4003BC566 /* DrawOnImgVC.xib in Resources */,
+				B8E379DE268EFCBF006FAE19 /* OpenCloseTbvVC.xib in Resources */,
 				B81070AF25A7E9160085983E /* Assets.xcassets in Resources */,
 				B89A22182687EFA200123B2F /* ComingFromUpRightVC.xib in Resources */,
 				B8867AE526247B2200B14462 /* EditTextVC.xib in Resources */,
@@ -447,6 +487,7 @@
 			files = (
 				B87ED40325BE57B700CF3EA9 /* GesturesAnimationUtil.swift in Sources */,
 				B88DA26B262BE66800C0B37E /* SettingVC.swift in Sources */,
+				B8F60477268F38A400F720C2 /* tbvHeaderView.swift in Sources */,
 				B872AC4A262140E80096ACD3 /* UIColorExtension.swift in Sources */,
 				B8867AC42621489300B14462 /* UIImageExtension.swift in Sources */,
 				B88DA277262BE6B100C0B37E /* XibViewForCell.swift in Sources */,
@@ -463,6 +504,7 @@
 				B8E082F226311FD4003BC566 /* DrawOnImgVC.swift in Sources */,
 				B89A22172687EFA200123B2F /* ComingFromUpRightVC.swift in Sources */,
 				B8486943262FB6E400C95435 /* BlueTheme.swift in Sources */,
+				B8E379E0268EFCD3006FAE19 /* OpenCloseTbvModel.swift in Sources */,
 				B81070A625A7E9150085983E /* AppDelegate.swift in Sources */,
 				B81070BB25A7E9560085983E /* CanvasView.swift in Sources */,
 				B8F03EF626291E7F00783A5A /* HomePageVC.swift in Sources */,
@@ -473,9 +515,11 @@
 				B8867ACB2621547400B14462 /* ImageUtil.swift in Sources */,
 				B8486944262FB6E400C95435 /* ThemeProtocol.swift in Sources */,
 				B8867AE026247A5500B14462 /* EditTextVC.swift in Sources */,
+				B8E379DD268EFCBF006FAE19 /* OpenCloseTbvVC.swift in Sources */,
 				B872AC50262141440096ACD3 /* ArrayExtension.swift in Sources */,
 				B872AC18261F3E7F0096ACD3 /* HapticsUtil.swift in Sources */,
 				B8486901262D6F0E00C95435 /* DrawingOnImgViewVC.swift in Sources */,
+				B8E379E4268F054F006FAE19 /* TableViewCell.swift in Sources */,
 				B87A7099262541FF00FB1707 /* DrawingExtensionGesture.swift in Sources */,
 				B8379A0E267DD3430042D18D /* WarningVCModel.swift in Sources */,
 				B872AC1D261F44300096ACD3 /* CustomSliderManager.swift in Sources */,

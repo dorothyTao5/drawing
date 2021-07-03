@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpenCloseTbvVC" customModule="DrawingFor12_older" customModuleProvider="target">
+            <connections>
+                <outlet property="btn" destination="mfx-nt-dDs" id="DGm-wr-xcV"/>
+                <outlet property="lcTbv_H" destination="ok0-Fs-yra" id="3WC-ra-gnX"/>
+                <outlet property="tbv" destination="6ry-CP-44n" id="i0c-na-8BL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfx-nt-dDs">
+                    <rect key="frame" x="20" y="144" width="374" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.94177069090609877" blue="0.93781873551051087" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="1AX-Nd-hBf"/>
+                    </constraints>
+                    <state key="normal" title="click to Open tbv">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnShowTbvPressed:" destination="-1" eventType="touchUpInside" id="pYl-EW-apx"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="6ry-CP-44n">
+                    <rect key="frame" x="20" y="194" width="374" height="0.0"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="ok0-Fs-yra"/>
+                    </constraints>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.85665642621811922" green="0.86087566614151001" blue="0.76921741845134739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="mfx-nt-dDs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="Ngb-Hz-nPw"/>
+                <constraint firstItem="mfx-nt-dDs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="QJG-Po-Lxc"/>
+                <constraint firstItem="6ry-CP-44n" firstAttribute="top" secondItem="mfx-nt-dDs" secondAttribute="bottom" id="cYg-ZI-qSc"/>
+                <constraint firstItem="6ry-CP-44n" firstAttribute="width" secondItem="mfx-nt-dDs" secondAttribute="width" id="dG9-Wz-XGG"/>
+                <constraint firstItem="6ry-CP-44n" firstAttribute="centerX" secondItem="mfx-nt-dDs" secondAttribute="centerX" id="jlL-SP-5qe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mfx-nt-dDs" secondAttribute="trailing" constant="20" id="ru6-PM-Kin"/>
+            </constraints>
+            <point key="canvasLocation" x="69.565217391304358" y="68.973214285714278"/>
+        </view>
+    </objects>
+</document>

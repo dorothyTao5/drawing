@@ -37,6 +37,10 @@ func switchedBehaviorFunc ( )    {
 
 import UIKit
 
+protocol CustomSegmentDelegate {
+    func switchRightToLeft()
+    func switchLeftToRight()
+}
 //@IBDesignable
 class CustomSegment: UIView {
     
@@ -91,9 +95,8 @@ class CustomSegment: UIView {
         getRightCGCenter()
     }()
     
-    //MARK: - **必須設定的var**
-    ///switch 後的行為
-    var segmentSwitched : (()->Void)?
+ 
+    
     ///給view的高和寬
     var lcHeight: NSLayoutConstraint!
     var lcWidth: NSLayoutConstraint!
@@ -110,9 +113,12 @@ class CustomSegment: UIView {
         commonInit()
     }
     
-
+    //MARK: - **必須設定的var**
+    ///switch 後的行為
+    var segmentSwitched : (()->())? 
     
     //MARK: - **必須呼叫的Func**
+
     ///建立segment
     func connectCustomSegment(lcBGViewH: NSLayoutConstraint, lcBGViewW:NSLayoutConstraint){
         self.layer.borderWidth = borderWidth
@@ -137,6 +143,22 @@ class CustomSegment: UIView {
 
     }
     
+    func switchRightToLeft(switchRightToLeft:()->(), switchLeftToRight:()->()) {
+        switch isOnLeftSide {
+        case true: //right to left
+//            print(" switchedToLeft =",customSegment.isOnLeftSide )
+            switchRightToLeft()
+            break
+        case false:  //left to right
+//            print(" switchedToRight =",customSegment.isOnLeftSide )
+            switchLeftToRight()
+            break
+        }
+        
+    }
+    
+
+    
     
     //    MARK: - Functions
     
@@ -144,7 +166,7 @@ class CustomSegment: UIView {
     
     //MARK: - Get Position
     
-    func commonInit() {
+    private func commonInit() {
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.size.height/2
@@ -168,22 +190,24 @@ class CustomSegment: UIView {
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(tapRecognize))
         lbDownR.addGestureRecognizer(tapGesture2)
         
+        
+        
     }
     
-    func getLeftCGCenter() -> CGPoint {
+    private func getLeftCGCenter() -> CGPoint {
         let yCenterPoint = lcHeight.constant / 2
         let leftXPoint = lcWidth.constant / 4
        return CGPoint(x: leftXPoint ,y: yCenterPoint )
         
     }
     
-    func getRightCGCenter() -> CGPoint {
+    private func getRightCGCenter() -> CGPoint {
         let yCenterPoint = lcHeight.constant / 2
         let rightXPoint = lcWidth.constant / 4 * 3
         return CGPoint(x: rightXPoint ,y: yCenterPoint )
     }
     
-    func animateSubViewFromLeftToRight() {
+    private func animateSubViewFromLeftToRight() {
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.subView.center = self.rightEdge
         })
@@ -197,10 +221,10 @@ class CustomSegment: UIView {
                            colorSubViewBG: ColSubVwR)
         }
         self.segmentSwitched!()
-       
+        
     }
     
-    func animateSubViewFromRightToLeft() {
+    private func animateSubViewFromRightToLeft() {
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.subView.center = self.leftEdge
         })
@@ -218,7 +242,7 @@ class CustomSegment: UIView {
     }
     
     //    MARK: - SetUpLabelAlike
-     func setUpSelectedLabel( downLabel:UILabel,
+    private func setUpSelectedLabel( downLabel:UILabel,
                              selectedLabel:UILabel,
                              basicColor: UIColor,
                              activeTxtCol: UIColor,
@@ -231,13 +255,13 @@ class CustomSegment: UIView {
          subView.backgroundColor = colorSubViewBG
      }
      
-     func setUpUnselectedLabel( downLabel:UILabel, basicColor: UIColor){
+    private func setUpUnselectedLabel( downLabel:UILabel, basicColor: UIColor){
          downLabel.textColor = basicColor
          downLabel.isHidden = false
      }
     
     //    MARK: - setUpViews
-    func setUpSelectedView(cgpoint:CGPoint) {
+    private func setUpSelectedView(cgpoint:CGPoint) {
         
         subView.frame = CGRect(x: 0, y: 0, width: lcWidth.constant / 2, height: lcHeight.constant )
         subView.center = cgpoint
@@ -271,7 +295,7 @@ class CustomSegment: UIView {
     }
     
     
-    func setUpDownLabel(lbDown: inout UILabel,lbText:String, getCenter: ()->CGPoint) {
+    private func setUpDownLabel(lbDown: inout UILabel,lbText:String, getCenter: ()->CGPoint) {
         lbDown = setUpLabel(label: lbDown)
         lbDown.font = lbDown.font.withSize(TextSize)
         lbDown.center = getCenter()
@@ -279,7 +303,7 @@ class CustomSegment: UIView {
         self.addSubview(lbDown)
     }
     
-    func setUpLabel(label:UILabel) -> UILabel {
+    private func setUpLabel(label:UILabel) -> UILabel {
         label.frame = CGRect(x: 0, y: 0, width: lcWidth.constant / 2, height: lcHeight.constant)
         label.font = label.font.withSize(TextSize)
         label.textAlignment = .center

@@ -66,6 +66,9 @@
 		B8F03EFF262921B000783A5A /* CustomSegmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F03EFD262921B000783A5A /* CustomSegmentVC.xib */; };
 		B8F60477268F38A400F720C2 /* tbvHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F60475268F38A400F720C2 /* tbvHeaderView.swift */; };
 		B8F60478268F38A400F720C2 /* tbvHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F60476268F38A400F720C2 /* tbvHeaderView.xib */; };
+		B8F6047B2691CAB600F720C2 /* TitleTbvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F604792691CAB600F720C2 /* TitleTbvCell.swift */; };
+		B8F6047C2691CAB600F720C2 /* TitleTbvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F6047A2691CAB600F720C2 /* TitleTbvCell.xib */; };
+		B8F6047E2691CE6200F720C2 /* LeftRightTbvModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F6047D2691CE6200F720C2 /* LeftRightTbvModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,9 @@
 		B8F03EFD262921B000783A5A /* CustomSegmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSegmentVC.xib; sourceTree = "<group>"; };
 		B8F60475268F38A400F720C2 /* tbvHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tbvHeaderView.swift; sourceTree = "<group>"; };
 		B8F60476268F38A400F720C2 /* tbvHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tbvHeaderView.xib; sourceTree = "<group>"; };
+		B8F604792691CAB600F720C2 /* TitleTbvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTbvCell.swift; sourceTree = "<group>"; };
+		B8F6047A2691CAB600F720C2 /* TitleTbvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTbvCell.xib; sourceTree = "<group>"; };
+		B8F6047D2691CE6200F720C2 /* LeftRightTbvModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftRightTbvModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,7 @@
 				B84A0D272672110F00F038F1 /* HomePageModel.swift */,
 				B84A0D2C2672194600F038F1 /* DrawingModel.swift */,
 				B8E379DF268EFCD3006FAE19 /* OpenCloseTbvModel.swift */,
+				B8F6047D2691CE6200F720C2 /* LeftRightTbvModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,6 +384,8 @@
 				B8F60476268F38A400F720C2 /* tbvHeaderView.xib */,
 				B8E379E2268F054F006FAE19 /* TableViewCell.swift */,
 				B8E379E3268F054F006FAE19 /* TableViewCell.xib */,
+				B8F604792691CAB600F720C2 /* TitleTbvCell.swift */,
+				B8F6047A2691CAB600F720C2 /* TitleTbvCell.xib */,
 			);
 			path = tbvCell;
 			sourceTree = "<group>";
@@ -471,6 +480,7 @@
 				B8E082F326311FD4003BC566 /* DrawOnImgVC.xib in Resources */,
 				B8E379DE268EFCBF006FAE19 /* OpenCloseTbvVC.xib in Resources */,
 				B81070AF25A7E9160085983E /* Assets.xcassets in Resources */,
+				B8F6047C2691CAB600F720C2 /* TitleTbvCell.xib in Resources */,
 				B89A22182687EFA200123B2F /* ComingFromUpRightVC.xib in Resources */,
 				B8867AE526247B2200B14462 /* EditTextVC.xib in Resources */,
 				B89A221D26882B5500123B2F /* InfoDescripView.xib in Resources */,
@@ -496,6 +506,7 @@
 				B883D72025B81C4500751A63 /* AlertViewUtil.swift in Sources */,
 				B872AC2A26203C150096ACD3 /* CustomLabelManager.swift in Sources */,
 				B88DA27F262C03E800C0B37E /* CustomSegment.swift in Sources */,
+				B8F6047B2691CAB600F720C2 /* TitleTbvCell.swift in Sources */,
 				B81070C325A7EF5A0085983E /* PreviewImgVC.swift in Sources */,
 				B81070AA25A7E9150085983E /* DrawingVC.swift in Sources */,
 				B8486906262D6F2F00C95435 /* DrawnImageView.swift in Sources */,
@@ -526,6 +537,7 @@
 				B84A0D2D2672194600F038F1 /* DrawingModel.swift in Sources */,
 				B8486945262FB6E400C95435 /* Theme.swift in Sources */,
 				B8486946262FB6E400C95435 /* RedTheme.swift in Sources */,
+				B8F6047E2691CE6200F720C2 /* LeftRightTbvModel.swift in Sources */,
 				B87ED40025B9800000CF3EA9 /* UIViewExtension.swift in Sources */,
 				B8F03EFE262921B000783A5A /* CustomSegmentVC.swift in Sources */,
 			);

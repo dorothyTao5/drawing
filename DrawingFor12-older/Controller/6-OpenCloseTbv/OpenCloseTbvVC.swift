@@ -9,17 +9,27 @@ import UIKit
 
 class OpenCloseTbvVC: UIViewController {
 
+    
+    @IBOutlet weak var tbvTitle: UITableView!
+    @IBOutlet weak var vwLeftBtn: UIView!
+    @IBOutlet weak var vwRightBtn: UIView!
+    
     @IBOutlet weak var tbv: UITableView!
     @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var lcTbv_H: NSLayoutConstraint!
     
+    var titleTbvModel = LeftRightTbvModel()
     var tbvModel = OpenCloseTbvModel()
     var btnControlModel = BtnControTbvModel()
     
-  
+    var titleIndex = 0
+    var strOpenTbvTitle = "click to Close tbv first"
+    var strCloseTbvTitle = "click to Open tbv first"
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpTitleTBView()
         setUpTableView()
         setupAppearence()
     }
@@ -30,20 +40,49 @@ class OpenCloseTbvVC: UIViewController {
                                                  view: self.view,
                                                  tbvConstraint: lcTbv_H,
                                                  expendHeight: 300,
-                                                 expendStr: "click to close tbv",
+                                                 expendStr: strOpenTbvTitle,
                                                  expend: {
                                                     btn.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+                                                    
                                                  },
                                                  shrinkHeight: 0,
-                                                 shrinkStr: "click to Open tbv") {
+                                                 shrinkStr: strCloseTbvTitle) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
                 btn.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+                tbvModel.arrData = btnControlModel.setSectionExpenedDataAsFalse(arr: tbvModel.arrData)
+                tbv.reloadData()
             }
         }
-        
     }
     
+    @IBAction func btnTitleRightPressed(_ sender: UIButton) {
+        let dataCount = titleTbvModel.arrData.count 
+        titleTbvModel.increaseIndexPressed(arrCount: dataCount, currentIndex: &titleIndex)
+        changeTbvTitleLabel()
+        tbvModel.arrData = btnControlModel.setSectionExpenedDataAsFalse(arr: tbvModel.arrData)
+        tbv.reloadData()
+    }
+   
+    @IBAction func btnLeftPressed(_ sender: UIButton) {
+        let dataCount = titleTbvModel.arrData.count 
+        titleTbvModel.decreaseIndexPressed(arrCount: dataCount, currentIndex: &titleIndex)
+        changeTbvTitleLabel()
+        tbvModel.arrData = btnControlModel.setSectionExpenedDataAsFalse(arr: tbvModel.arrData)
+        tbv.reloadData()
+    }
+    
+    
+   
     //MARK: - Functions
+    func setUpTitleTBView() {
+        tbvTitle.dataSource = self
+        tbvTitle.delegate = self
+        tbvTitle.register(UINib(nibName: "TitleTbvCell", bundle: nil),
+                     forCellReuseIdentifier: "TitleTbvCell")
+        tbvTitle.sectionFooterHeight = 0
+        tbvTitle.sectionHeaderHeight = 0
+    }
+    
     func setUpTableView() {
         tbv.dataSource = self
         tbv.delegate = self
@@ -54,11 +93,32 @@ class OpenCloseTbvVC: UIViewController {
         tbv.tableFooterView?.isHidden = true
         tbv.sectionFooterHeight = 0
     }
-    
+     
     func setupAppearence() {
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 10
+        btn.setTitle(strCloseTbvTitle, for: .normal)
+        //圓角
+        vwRightBtn.clipsToBounds = true
+        vwRightBtn.layer.cornerRadius = 22
+        vwRightBtn.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        vwLeftBtn.clipsToBounds = true
+        vwLeftBtn.layer.cornerRadius = 22
+        vwLeftBtn.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        
     }
+    
+    func changeTbvTitleLabel() {
+        titleTbvModel.animateForTitleTbv(tbv: tbvTitle, animation:  UITableView.RowAnimation.left, row: 0, section: 0)
+        if btnControlModel.showTbv == true {
+            strOpenTbvTitle = "click to close tbv \(titleTbvModel.arrData[titleIndex])"
+            btn.setTitle(strOpenTbvTitle, for: .normal)
+        }else {
+            strCloseTbvTitle = "click to Open tbv \(titleTbvModel.arrData[titleIndex])"
+            btn.setTitle(strCloseTbvTitle, for: .normal)
+        }
+    }
+   
 
 }
 
@@ -68,20 +128,37 @@ extension OpenCloseTbvVC: UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Section
       func numberOfSections(in tableView: UITableView) -> Int {
-        return tbvModel.getNumberOfSections()
-     }
+        if tableView == tbvTitle {
+            return 1
+        }else {
+            return tbvModel.getNumberOfSections()
+        }
+      }
     
     //MARK: - Row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tbvModel.getNumberOfRowsInSection(at: section)
+        if tableView == tbvTitle {
+            return 1
+        }else {
+            return tbvModel.getNumberOfRowsInSection(at: section)
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        
-        cell.lbTitle?.text = tbvModel.getCellTitle(indexPath: indexPath)
-        
-        return cell
+        if tableView == tbvTitle {
+            let titleCell = tbvTitle.dequeueReusableCell(withIdentifier: "TitleTbvCell", for: indexPath) as! TitleTbvCell
+            titleCell.lb.text = titleTbvModel.arrData[titleIndex]
+            titleCell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            return titleCell
+            
+        }else {
+            let cell = tbv.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+            cell.lbTitle?.text = tbvModel.getCellTitle(indexPath: indexPath)
+            
+            return cell
+        }
+      
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -94,16 +171,21 @@ extension OpenCloseTbvVC: UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tbv.dequeueReusableHeaderFooterView(withIdentifier: "tbvHeaderView") as! tbvHeaderView
+        if tableView == tbv {
+            let headerView = tbv.dequeueReusableHeaderFooterView(withIdentifier: "tbvHeaderView") as! tbvHeaderView
+            
+            headerView.contentView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.9146896171, blue: 0.8012113608, alpha: 1)
+            headerView.btn.tag = section
+            headerView.btn.addTarget(self, action: #selector(self.handleExpandClose), for: .touchUpInside)
+            let isOpen = tbvModel.arrData[section]["open"] as? Bool ?? false
+            headerView.imgArrow.image = UIImage(named: (isOpen ? "arrowUp":"down-arrow"))
+            headerView.lb.text =  tbvModel.arrData[section]["title"] as? String ?? ""
+            return headerView
+        }else {
+            return nil
+        }
         
-        headerView.contentView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.9146896171, blue: 0.8012113608, alpha: 1)
-        headerView.btn.tag = section
-        headerView.btn.addTarget(self, action: #selector(self.handleExpandClose), for: .touchUpInside)
-        let isOpen = tbvModel.arrData[section]["open"] as? Bool ?? false
-        headerView.imgArrow.image = UIImage(named: (isOpen ? "arrowUp":"down-arrow"))
-        headerView.lb.text =  tbvModel.arrData[section]["title"] as? String ?? ""
         
-        return headerView
     }
     
     //點擊header展開或收起tableview section
@@ -134,7 +216,11 @@ extension OpenCloseTbvVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-       return 44
+        if tableView == tbv {
+            return 44
+        }else {
+            return 0
+        }
    }
   
 }

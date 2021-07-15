@@ -16,8 +16,6 @@ struct BtnControTbvModel{
         if showTbv == false{
             btn.clipsToBounds = true
             btn.layer.cornerRadius = 10
-           
-            
             btn.setTitle(expendStr, for: .normal)
             showTbv = true
             UIView.animate(withDuration: 0.5) {
@@ -40,7 +38,7 @@ struct BtnControTbvModel{
     }
     
     
-    mutating func detectExpenedOrShrinkTbvExpend(expend:()->(), shrink:()->()){
+    mutating func detectExpenedOrShrinkTbv(expend:()->(), shrink:()->()){
         if showTbv == false{
             showTbv = true
             expend()
@@ -50,6 +48,19 @@ struct BtnControTbvModel{
             shrink()
 
         }
+    }
+    
+    // tbv.reloadData() to uadate UI after call this func
+    mutating func setSectionExpenedDataAsFalse(arr: [[String: Any]]) -> [[String: Any]]{
+        var temarr = arr
+        for i in 0..<temarr.count{
+            var isOpen = temarr[i]["open"] as! Bool
+            if isOpen == true {
+                isOpen = !isOpen
+            }
+            temarr[i]["open"] = isOpen
+        }
+        return temarr
     }
     
     
